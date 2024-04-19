@@ -1,0 +1,32 @@
+            {{'lashies-upsell.css' | asset_url | stylesheet_tag }} 
+
+          
+            <div class="custom-lashies-upsell-popup hidden">
+            <div class="popup-overlay icon-closed"></div>
+            <div class="__pf" id="__pf">  
+
+            <div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-5c5919c7"><div data-pf-type="Layout" class="pf-746c8f23"><div data-container="true" class="sc-pZopv bjKdkd pf-4a915627" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 700px;"><div class="sc-qPjXN eYzxUD pf-ec2c69e5 pf-r pf-r-eh eyeliner-popup" id="eyeliner-popup" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-cfb520f2 actual-popup" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-65127a90"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-88bb6512"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-042088bb">ATTENTION!</span></p></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-bd24c9d9"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-abf8991b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-2712abf8">LASHIES</span></h3><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-38a3c81c"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-6de038a3">MUST PURCHASE A LASHIES<br>NANO-GRIP LINER FOR BEST <br>PRODUCT EXPERIENCE</span></p><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-cbec4bc6">{% render 'product-addons', addon_overide:'addons-for-popup' %}</div><a data-pf-type="Button" class="sc-pZdvY kuwSuz pf-cd793c87 open-slide-cart" data-izimodal-close="1" onclick="window.cartopenWidget()"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-2e4bcd79"><img src="https://cdn.shopify.com/s/files/1/2569/3918/files/cart-icon__2x_3dcc595e-13a9-4b00-be0a-a2155a979e0c.png?2686" class="minicart--open" alt="Open Minicart" style="position: relative;width: 20px;left: -8px;filter: invert(1);">GO TO CART</span></a></div><i class="sc-pjGMk jrwOpx pf-99776294 fa fa-window-close icon-closed"  data-pf-type="Icon" data-izimodal-close=""1""><svg xmlns="http://www.w3.org/2000/svg" height="329pt" viewBox="0 0 329.26933 329" width="329pt" style="width: 20px;height: 20px;"><path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"/></svg></i></div></div></div></div></div></div></div>  
+
+
+            </div>  
+            </div> 
+            <script>
+                window.cartopenWidget=function(){
+
+                    $('body').removeClass('show-lashies-popup'); 
+                    $('.toggleSideCart').click();  
+
+                }
+                $(document).ready(function () {
+
+ 
+                    $('.icon-closed').click(function(){
+
+                        $('body').removeClass('show-lashies-popup'); 
+
+                    }) 
+                    
+                })
+
+
+            </script>

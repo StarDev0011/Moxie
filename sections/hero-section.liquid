@@ -1,0 +1,48 @@
+<a href="{{section.settings.h_image_link}}"><picture style="
+  width: 100%;
+  display: block;
+">
+  <source srcset="
+      {{section.settings.image | img_url: '1600x'}},
+      {{section.settings.image | img_url: '1600x' ,scale:2}} 2x
+    " media="(min-width: 991px)"> 
+
+  <source srcset="
+      {{section.settings.imagemobile | img_url: '900x'}},
+      {{section.settings.imagemobile | img_url: '900x' ,scale:2}} 2x
+    " media="(max-width: 990px)">
+  <img srcset="
+      {{section.settings.image | img_url: '900x'}}
+    " style="
+  width: 1000%;
+">
+</picture>
+</a>
+{% schema %}
+  {
+    "name": "Hero Image",
+    "settings": [
+      
+      {
+        "type": "text",
+        "id": "h_image_link",
+        "label": "Add link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagemobile",
+        "label": "Mobile Image"
+      }
+],"presets": [
+      {
+        "name": "Hero Image",
+        "category": "Image"
+      }
+    ]
+}
+{% endschema %}

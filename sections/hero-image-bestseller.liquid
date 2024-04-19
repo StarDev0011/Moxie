@@ -1,0 +1,40 @@
+<a href="{{section.settings.h_image_link}}"><picture style="
+  width: 100%;
+  display: block;
+">
+  <source srcset="https://cdn.shopify.com/s/files/1/0560/3324/7413/files/Desktop_1600x_2x_c874e8fe-a355-4fba-80c1-07dba45bc93b_1600x.jpg" media="(min-width: 991px)"> 
+
+  <source srcset="https://cdn.shopify.com/s/files/1/0560/3324/7413/files/Desktop_1600x_2x_c874e8fe-a355-4fba-80c1-07dba45bc93b_1600x.jpg" media="(max-width: 990px)">
+  <img srcset="https://cdn.shopify.com/s/files/1/0560/3324/7413/files/Desktop_1600x_2x_c874e8fe-a355-4fba-80c1-07dba45bc93b_1600x.jpg" style="
+  width: 1000%;
+">
+</picture>
+</a>
+{% schema %}
+  {
+    "name": "Hero Image bestseller",
+    "settings": [
+      
+      {
+        "type": "text",
+        "id": "h_image_link",
+        "label": "Add link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "imagemobile",
+        "label": "Mobile Image"
+      }
+],"presets": [
+      {
+        "name": "Hero Image",
+        "category": "Image"
+      }
+    ]
+}
+{% endschema %}

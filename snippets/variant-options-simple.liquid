@@ -1,0 +1,59 @@
+<!-- HELLO TO DEV --> <div class="variants-d">  
+{% assign enableVariants = false %} 
+{% assign otherVariants = '' %}
+{% for tag in product.tags %}
+{% if tag contains 'variant_' %}
+<!-- variant {{tag}} -->
+{% assign enableVariants = true %}
+{% endif %}  
+{% if tag contains 'self_title_'%}
+{%
+    assign selfTitle = tag | replace: 'self_title_','' %}{% endif %}  
+
+{% endfor%}
+
+ 
+         
+ 
+
+{% if enableVariants %}  
+<div class="variant-options" >  
+    <p class="variant-option-title">Other Colors </p>
+ <div class="pf-ab0c5894 sc-jtRfpW iORGHt product-block-selector" data-pf-type="Block">
+     {% assign variant= product.variants[0] %}
+    <div data-variant='{{ variant |json }}' data-meta='{{variant.metafields.global |json}}' data-image-src="{{ variant.featured_image | img_url:'800x' }}"  data-variant-id="{{ variant.id }}" data-variant-title="{{ variant.title }}"  class="pf-9c75274e single-product-h sc-jtRfpW iORGHt single-product {% if  selectedvariant.id == variant.id  %} active {% endif %}" data-pf-type="Block">
+        <picture class="pf-60645498 sc-bMVAic iVqvQb {{ variant.id }}" data-pf-type="Image"><img src="{{ product.featured_image | img_url:'200x' }}"></picture>
+        <p class="pf-c6262321 sc-emmjRN kxBUTU" data-pf-type="Paragraph"><span class="pf-17df708f sc-hGoxap dWevfJ" data-pf-type="Text"><span style="font-weight: bold;">{{selfTitle}}</span></span>   
+            <span class="money-price">   
+                {{variant.price | money_without_trailing_zeros}}
+            </span>  
+        </p>
+</div>
+
+   {% for tag in product.tags %}
+
+
+
+    {% if tag contains 'variant_' %}
+    {% assign pTags = tag |split :"_"  %}
+    {% assign producthandle= pTags[2] %} 
+    {% assign productTitle= pTags[1] %} 
+    {% assign singleProduct = all_products[producthandle] %}
+    {% assign variant = singleProduct.variants[0] %}
+  
+    <a href="{{singleProduct.url}}"  data-variant='{{ variant |json }}' data-meta='{{variant.metafields.global |json}}' data-image-src="{{ variant.featured_image | img_url:'800x' }}"  data-variant-id="{{ variant.id }}" data-variant-title="{{ variant.title }}"  class="pf-9c75274e single-product-h sc-jtRfpW iORGHt single-product {% if  selectedvariant.id == variant.id  %} active {% endif %}" data-pf-type="Block">
+                    <picture class="pf-60645498 sc-bMVAic iVqvQb {{ variant.id }}" data-pf-type="Image"><img src="{{ singleProduct.featured_image | img_url:'200x' }}"></picture>
+                    <p class="pf-c6262321 sc-emmjRN kxBUTU" data-pf-type="Paragraph"><span class="pf-17df708f sc-hGoxap dWevfJ" data-pf-type="Text"><span style="font-weight: bold;">{{productTitle}}</span></span>   
+                        <span class="money-price"> 
+                            {{variant.price | money_without_trailing_zeros}}
+                        </span> 
+                    </p>
+    </a>
+
+    {% endif %} 
+{% endfor %}
+</div>
+
+</div>   
+
+{% endif %}</div>

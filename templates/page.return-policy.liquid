@@ -1,0 +1,74 @@
+<div class="page-width page-content">
+
+  {% include 'breadcrumbs' %}
+
+	<div class="grid">
+    <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
+
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.title }}</h1>
+      </header>
+
+      <div class="rte rte--nomargin">
+        {{ page.content }}
+        {% section 'return-policy' %}
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script >
+    // Category list collapse
+    $j=$;
+    function expanderList() {
+        $j('.expander-list .expander').each(function() {
+            if ($j(this).parent('li').hasClass('active')){
+                $j(this).next('ul').slideDown(0);
+                $j(this).parent().addClass('open');
+            }
+        })
+        $j(".expander-list .expander").on('click', function(e) {
+            e.preventDefault;
+            var speed = 300;
+            var thisItem = $j(this).parent(),
+                nextLevel = $j(this).next('ul');
+            if (thisItem.hasClass('open')){
+                thisItem.removeClass('open');
+                nextLevel.slideUp(speed);
+            }
+            else {
+                thisItem.addClass('open');
+                nextLevel.slideDown(speed);
+            }
+        })
+    };
+
+    // Collapse Block (left column in listing)
+
+    function collapseBlock() {
+        $j('.collapse-block__content').each(function() {
+            if ($j(this).parent('.collapse-block').hasClass('open')){
+                $j(this).slideDown(0);
+            }
+        })
+        $j('.collapse-block__title').on('click', function(e) {
+            e.preventDefault;
+            var speed = 300;
+            var thisItem = $j(this).parent(),
+                nextLevel = $j(this).next('.collapse-block__content');
+            if (thisItem.hasClass('open')){
+                thisItem.removeClass('open');
+                nextLevel.slideUp(speed);
+            }
+            else {
+                thisItem.addClass('open');
+                nextLevel.slideDown(speed);
+            }
+        })
+    };
+    expanderList();
+    collapseBlock();
+
+</script >

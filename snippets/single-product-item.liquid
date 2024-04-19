@@ -1,0 +1,122 @@
+{%- assign hoverImage ='' -%}
+{%- assign hoverClass ='' -%}
+{%- assign badge ='' -%}
+{% assign Bundlebadge = false %}
+
+{%- if product.tags.size > 0 -%}
+{%- for tag in product.tags -%} 
+<!-- tag -> {{tag}} -->
+{%- if tag == 'do_bundle_save' -%}
+{%- capture Bundlebadge -%}   
+<span class="single-bundle-save"><span>BUNDLE </span></span>
+{%- endcapture -%} 
+ 
+{%- endif -%}
+ 
+
+{%- if tag contains 'do_hover' -%}
+{%- assign hoverClass ='do_hover' -%}
+{%- capture hoverImage -%}
+<img class="hidden hover-image" src="{{ product.images[1] | img_url:"large" }}" alt="{{ pTitle }}">
+{%- endcapture -%}
+{%- endif -%}
+{%- if tag contains 'ribbon_' -%}
+{%- capture badge -%} 
+<span class="ribbon ribbon-top-left {% if tag contains '10' or tag contains 'black' %} ten-magnet-ribbon {% endif%}"><span>{{ tag | replace : 'ribbon_','' | replace:'_black','' }}</span></span>
+{%- endcapture -%} 
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+   
+<li class="{{class}} single-product-wrapper show-ribbon best-seller-list" >
+    {%- assign variantSize =   variants.variants | size -%}
+
+    <div class="pf-619b82e5 single-product-item sc-cbkKFq bTgDOc" data-pf-type="Column">
+    <a href="/products/{{ product_handle }}"  data-tags="{{ product.tags }}" class="pf-4938a1a6   {{ hoverClass }} sc-gojNiO dUgZyO" data-pf-type="Image">
+      <div class="reveal">
+      <img src="{{ img_url | img_url:"large" }}" alt="{{ pTitle }}">
+      <img class="hidden" src="{{ product.images[1] | img_url: '450x450' }}" alt="{{ product.images.last.alt | escape }}" />
+      </div>                                   {{ hoverImage }}
+                                           {{ badge }}
+    {% include 'sale-badge' , RBadge: badgeright,insidegrid:true %}
+    {% assign badgeright = '' %} 
+
+    </a>
+   {% if variantSize > 1 and product.tags contains 'show_swatches'  %}
+       <div class="swatch-wrapper hidden">
+       <div class="swatch clearfix " data-option-index="0">
+                  {% for variant in variants.variants %}
+          <div data-value="{{ variant.title }}" class="swatch-element color {{ variant.title | downcase}} " >
+
+               <div class="tooltip">{{ variant.title }}</div>
+
+               <input data-bg="{{ variant.image | img_url:"large" }}"  data-v-id="{{ variant.id}}"  id="swatch-{{ forloop.index0 }}-{{ variant.title | downcase}}-{{ variant.id }}" data-color-swatch="" type="radio" name="option-0" value="{{ variant.title | downcase}}">
+               
+               <label for="swatch-{{ forloop.index0 }}-{{ variant.title | downcase}}-{{ variant.id }}" class="color-swatch-bg {{ variant.title | downcase}} hide-text" style="background-image: url('{{ variant.image | img_url:"100x" }}'); background-size:contain;     " >
+                   <div class="line"></div>
+                   <span>{{ variant.title | downcase}}</span>
+               </label>
+
+           </div>
+           {% endfor %}
+       </div>
+       </div>
+   {% endif %}
+    <div class="px-2 w-full">
+    
+    <div class="pf-0b4f17de sc-iyvyFf gJXqlU" data-pf-type="Block">
+        
+      <p class="pf-5a62fa2b sc-jzgbtB fWpeJL" data-pf-type="Paragraph">
+        <span class="pf-af6eec07 sc-itybZL ihLHML uppercase" data-pf-type="Text"> 
+            {{pTitle | truncatewords: 7}}
+            </span>
+          </p>
+      <!-- <p class="mini-description" >
+        {{product.metafields.global.mini_description}}
+      </p> -->
+      {% if Bundlebadge %}
+      {{Bundlebadge}} 
+      {% else %} 
+      {%- include 'okendo-stars-new' ,pr: product  -%}
+      {% endif %}
+      <p test class="pf-d44394ac sc-jzgbtB fWpeJL" data-pf-type="Paragraph"><span  class="pf-b3ac6b33 sc-itybZL ihLHML" data-pf-type="Text">   {% assign variantSize =   variants.variants | size %}{% if variantSize > 1 %}<span class="starting_at">starting at </span>{% endif %}{{ variants.variants[0].price | money_without_trailing_zeros }}</span><s class="pf-b3ac6b33 sc-itybZL ihLHML" data-pf-type="Text" style="padding-left: 10px;color: grey;">{{ variants.variants[0].compare_at_price | money_without_trailing_zeros }}</s></p>
+    </div>
+
+    {%- if variantSize <= 1 -%}
+      {% assign soldOut= false %}
+      {% assign PTAG = product.tags | join:',' %} 
+ 
+      {% if  PTAG contains 'badge_custom_SOLD OUT' %}     
+      <button disabled  class="pf-abd47bac pf-i--right sc-dqBHgY eWmgqN moxie-shadow add_to_cart_button ajax_add_to_cart button w-full" href="https://www.moxielash.com/collections/all-products" target="_self" data-pf-type="Button" style="    background: black;
+      color: white;"><span class="pf-1e841025 sc-hGoxap dWevfJ" data-pf-type="Text">SOLD OUT!</span></button>
+     
+      {% else %} 
+
+      {% if product.available   %}
+    
+
+    <button data-pid="{{ variants.variants[0].id }}"  class="pf-abd47bac pf-i--right sc-dqBHgY eWmgqN moxie-shadow add_to_cart_button ajax_add_to_cart button w-full" href="https://www.moxielash.com/collections/all-products" target="_self" data-pf-type="Button" style="    background: black;
+    color: white;">
+     {% if product.tags contains 'pre-order' %}
+    <span class="pf-1e841025 sc-hGoxap dWevfJ" data-pf-type="Text">PRE ORDER</span>
+    {% else %}
+    <span class="pf-1e841025 sc-hGoxap dWevfJ" data-pf-type="Text">ADD TO CART</span>
+
+    {% endif %}
+  </button>
+    {% else %}
+      <button disabled  class="pf-abd47bac pf-i--right sc-dqBHgY eWmgqN moxie-shadow add_to_cart_button ajax_add_to_cart button w-full" href="https://www.moxielash.com/collections/all-products" target="_self" data-pf-type="Button" style="    background: black;
+    color: white;"><span class="pf-1e841025 sc-hGoxap dWevfJ" data-pf-type="Text">SOLD OUT!</span></button>
+     
+    {% endif  %}  {% endif  %}  
+    {%- else -%}
+    <a varsize="{{ variantSize}}" href="/products/{{ product_handle }}"  class="pf-abd47bac pf-i--right sc-dqBHgY eWmgqN moxie-shadow add_to_cart_button  button w-full" href="https://www.moxielash.com/collections/all-products" target="_self" data-pf-type="Button" style="    background: black;
+    color: white;"><span class="pf-1e841025 sc-hGoxap dWevfJ" data-pf-type="Text">VIEW PRODUCT</span></a>
+    {%- endif -%}
+    
+    </div>
+    {% include 'black-friday-message' %}
+  </div>
+
+
+</li>

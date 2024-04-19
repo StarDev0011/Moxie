@@ -1,0 +1,45 @@
+<a href="#looxReviews">
+  <div
+    class="loox-rating"
+    data-id="{{ product.id }}"
+    data-rating="{{ product.metafields.loox.avg_rating }}"
+    data-raters="{{ product.metafields.loox.num_reviews }}"
+  >
+    <i class="loox-icon loox-star-o"></i><i class="loox-icon loox-star-o"></i
+    ><i class="loox-icon loox-star-o"></i><i class="loox-icon loox-star-o"></i
+    ><i class="loox-icon loox-star-o"></i>
+  </div>
+</a>
+{% comment %}
+<div class="pf-78d3c904 sc-jtRfpW iORGHt" data-pf-type="Block">
+  <span
+    style="--rating: {{
+      pr.metafields.okendo.ReviewAverageValue | times: 100 | divided_by: 5
+    }}"
+    over-ride-review
+  >
+    {% for i in (0..4) %} {% assign cfount =
+    pr.metafields.okendo.ReviewAverageValue | times:1 %} {% if i < cfount %}
+    <i class="pf-9e12807e fa fa-star sc-hORach fQBQsl" data-pf-type="Icon"></i>
+    {% else %}
+    <i
+      class="pf-9e12807e fa fa-star-o sc-hORach fQBQsl"
+      data-pf-type="Icon"
+    ></i>
+    {% endif %} {% endfor %}
+  </span>
+  <p class="pf-ecc43bf2 sc-emmjRN kxBUTU" data-pf-type="Paragraph">
+    <span class="pf-0914c30c sc-hGoxap dWevfJ" data-pf-type="Text">
+      {{ pr.metafields.okendo.ReviewCount }} Reviews</span
+    >
+  </p>
+  <style>
+    .pf-c4a1b3ed.sc-gzOgki.htgaJh {
+      border-top: 1px solid #d8d8d8;
+      border-bottom: 1px solid #d8d8d8;
+      margin-bottom: 10px;
+    }
+  </style>
+</div>
+
+{% endcomment %}

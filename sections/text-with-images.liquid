@@ -1,0 +1,65 @@
+<style>
+.custom-heading{
+  text-align:center; font-size:30px; margin-top:30px; margin-bottom:30px; font-weight:bold;  
+  font-family: 'Futura', sans-serif;
+  line-height: 1;;
+}
+
+ 
+
+.custom-section-with-menu .custom-thre-columns.inside-megamenu .new-mega-collections {
+    width: 90%;
+}
+.custom-heading {
+    font-size: 25px;
+    max-width: 80%;
+    margin: 10px auto;
+    margin-top: 15px;
+}
+</style>
+<div class="custom-heading"><span>{{section.settings.sectitle}}</span></div>
+<div class='custom-thre-columns inside-megamenu'>
+  <div style="display:flex; justify-content:space-evenly; margin:0 auto;">
+ 
+{% include  'new-menu-items',title:'<span><span class=" left-tag">1.LINE</span></span>', 
+url:'',handle:'all',image:'https://cdn.shopify.com/s/files/1/0524/1507/0375/files/LINE.gif?v=1612186333' , custom_class:"sm:w-1/4 w-1/2" 
+%}
+  {% include 'new-menu-items',title:'2.LASH', 
+url:'',handle:'lash-collections',image:'https://cdn.shopify.com/s/files/1/0524/1507/0375/files/LASH.gif?v=1612186350', custom_class:"sm:w-1/4 w-1/2"
+%}
+  {% include 'new-menu-items',title:'<span style="line-height: 1; display: block;">3.BOOM</span>',  
+url:'',handle:'boom',image:'https://cdn.shopify.com/s/files/1/0524/1507/0375/files/BOOM_420f42ed-895a-486c-a976-55f1a656c6ba.gif?v=1614842887', custom_class:"sm:w-1/4 w-1/2" 
+%}     </div>
+  </div>
+<div class="custom-heading" ><span>{{section.settings.bottitle}}</span></div>
+
+{% include 'pagefly.add-to-cart-new' %}
+
+{% schema %}
+      { 
+        "name": "text-with-images",
+        "class": "s-index-section custom-section-with-menu",
+         
+        "settings": [
+         {"type": "text",
+        "id": "sectitle",
+        "label": "Title",
+        "default": "Add Title"
+        },
+       {"type": "text",
+        "id": "bottitle",
+        "label": "Title",
+        "default": "Add text here"
+        }],
+     
+        "presets": [
+          {
+            "name": "text-with-images",
+            "category": "General"
+            
+          }
+        ]
+      }
+
+    {% endschema %}
+    

@@ -1,0 +1,423 @@
+<link rel="stylesheet" media="print" onload="this.media='all'" href="{{ 'pagefly.436965f4.css' | asset_url }}">  <script>
+	window.__pageflyProducts = window.__pageflyProducts || {};
+	{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
+		id: {{ product.id | json }},
+		handle: {{ product.handle | json }},
+		title: {{ product.title | json }},
+		type: {{ product.type | json }},
+		url: {{ product.url | json }},
+		vendor: {{ product.vendor | json }},
+		variants: {{ product.variants | json }},
+		options: {{ product.options | json }},
+		media: {{ product.media | json }},
+		has_only_default_variant: {{ product.has_only_default_variant | json }},
+		options_with_values: {{ product.options_with_values | json }},
+		selected_variant: {{ product.selected_variant | json }},
+		selected_or_first_available_variant: {{ product.selected_or_first_available_variant | json }},
+		tags: {{ product.tags | json }},
+		template_suffix: {{ product.template_suffix | json }},
+		featured_image: {{ product.featured_image | json }},
+		featured_media: {{ product.featured_media | json }},
+		images: {{ product.images | json }}
+	};{% endunless %}
+	</script>{% if collection_264426455221 == null %}{%- assign collection_264426455221 = collections["lash-kits"] -%}{% endif %} {% if collection_264426487989 == null %}{%- assign collection_264426487989 = collections["lashes"] -%}{% endif %} {% if collection_264426520757 == null %}{%- assign collection_264426520757 = collections["liners"] -%}{% endif %} {% if collection_264409350325 == null %}{%- assign collection_264409350325 = collections["accessories"] -%}{% endif %}<script>
+	window.__pageflyCollections = window.__pageflyCollections || {};
+	window.__pageflyCollections["264426455221"] = {{collection_264426455221 | json }};
+window.__pageflyCollections["264426487989"] = {{collection_264426487989 | json }};
+window.__pageflyCollections["264426520757"] = {{collection_264426520757 | json }};
+window.__pageflyCollections["264409350325"] = {{collection_264409350325 | json }};
+	</script><div style="opacity:0" class="sc-dcgxYM htkieq __pf" id="__pf"><div data-pf-type="Body" class="sc-cTApHj fVRyQa pf-1_"><div data-pf-type="Layout" class="sc-caiKgP ipNIuR pf-2_"><div data-pf-type="CollectionPreview" class="pf-3_" store="[object Object]"><!-- EXPONEA start -->
+{% if collection %}
+<script type="text/javascript">
+    exponea.track('view_category',{
+        category_name: {{ collection.title | json }},
+        category_id: {{ collection.id | json }}
+    });
+</script>
+{% endif %}
+<!-- EXPONEA end -->
+ 
+{% section 'collection-header' %}
+</div><div data-pf-type="Section" id="image_background" class="sc-hUpaWb blbXGf pf-4_ pf-bg-lazy"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-5_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-6_"></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-7_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-8_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-9_"><div data-pf-type="Divider" class="sc-kfPtPH dSXrZE pf-10_"><span data-pf-type="Text" class="sc-ZOsLE HTdit pf-12_">MAGNETIC LASH KITS</span></div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-13_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-14_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-15_"><div class="sc-kiIAaw hQwVTn pf-16_ pf-r pf-r-ew" style="--s-xs:7.5px;--s-lg:15px;--ew-xs:2;--ew-sm:3;--ew-md:5;--ew-lg:4" data-pf-type="ProductList">{% assign collection_264426455221 = collections["lash-kits"] %}<!-- -->{% assign defaultProduct = product %}<!-- -->{% paginate collection_264426455221.products by 4 %}<!-- -->{% for product in collection_264426455221.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-jlRMkV ksCOFC pf-17_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-bBHHQT iVWrCP pf-18_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-19_"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage" class="sc-fmcixO cOuJRo pf-20_">{% assign images = product.images %}<div style="--w-xs:0" class="sc-eldixR dJYLtL pf-r-dg"><div data-href="{{ product.url }}" data-pf-type="MasterImage" style="order:0;--ratio:100%" class="sc-jtXFOG bFAUbd"><img src="{{ product.featured_image | img_url: "x300", scale: 2 }}" alt="{{ product.featured_image.alt }}" loading="lazy" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"/>{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-eXlDFz fmdpDr pf-hide pf-sm-hide pf-md-hide pf-lg-hide">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-iqVVwt dWaGix pf-hide pf-sm-hide pf-md-hide pf-lg-hide"><div data-pf-type="ProductImageList" class="sc-eWfWgB jwdikc pf-r-dg">
+								{% assign pf_all = "" %}
+								{% assign pf_laptop = "" %}
+								{% assign pf_tablet = "" %}
+								{% assign pf_mobile = "" %}
+								{% for i in (0..images.size) limit:images.size %}
+								{% assign image = images[i] %}
+								{% if true %}
+								{% if i > 4 %}
+								{% assign pf_all = "pf-lg-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_laptop = "pf-md-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_tablet = "pf-sm-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_mobile = "pf-hide" %}
+								{% endif %}
+								{% endif %}
+							<div class="sc-kTLnJg jVwDIe pf-21_ {{pf_all}} {{pf_laptop}} {{pf_tablet}} {{pf_mobile}}" data-img-id="{{ image.id }}" data-pf-type="ImageItem"><img loading="lazy" src="{{ image.src | img_url: "master" }}" alt="{{ image.alt }}" draggable="false"/></div>{% endfor %}</div>{% if true %}<div data-pf-nav="prev" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-left"></i></div><div data-pf-nav="next" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-right"></i></div>{% endif %}</div></div></div><h3 data-product-type="title" data-product-id="{{ product.id }}" data-href="{{ product.url }}" data-pf-type="ProductText" class="sc-fXeWgy hmFFGo pf-23_">{{ product.title }}</h3><div data-product-type="price" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-cbTAsW kbOIjO pf-24_">{{ product.variants[0].price | money }}</div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC" class="sc-lkgURy irubqu pf-25_"><span>Add To Cart</span></button></div></div></div>{% endform %}{% endif %}</div><script>
+				window.__pageflyProducts = window.__pageflyProducts || {};
+				window.__pageflyProducts["{{product.id}}"] = {
+					id: {{product.id | json }},
+					handle: {{product.handle | json }},
+					title: {{product.title | json }},
+					type: {{product.type | json }},
+					url: {{product.url | json }},
+					vendor: {{product.vendor | json }},
+					variants: {{product.variants | json }},
+					options: {{product.options | json }},
+					media: {{product.media | json }},
+					has_only_default_variant: {{product.has_only_default_variant | json }},
+					options_with_values: {{product.options_with_values | json }},
+					selected_variant: {{product.selected_variant | json }},
+					selected_or_first_available_variant: {{product.selected_or_first_available_variant | json }},
+					tags: {{product.tags | json }},
+					template_suffix: {{product.template_suffix | json }},
+					featured_image: {{product.featured_image | json }},
+					featured_media: {{product.featured_media | json }},
+					images: {{product.images | json }}
+				};</script></div>{% endfor %}<!-- -->{% endpaginate %}<!-- -->{% assign product = defaultProduct %}</div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-28_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-29_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-30_"><div data-pf-type="Divider" class="sc-kfPtPH dSXrZE pf-31_"><span data-pf-type="Text" class="sc-ZOsLE HTdit pf-33_">LASHES</span></div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-34_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-35_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-36_"><div class="sc-kiIAaw hQwVTn pf-37_ pf-r pf-r-ew" style="--s-xs:7.5px;--s-lg:16.5px;--ew-xs:2;--ew-sm:3;--ew-md:5;--ew-lg:4" data-pf-type="ProductList">{% assign collection_264426487989 = collections["lashes"] %}<!-- -->{% assign defaultProduct = product %}<!-- -->{% paginate collection_264426487989.products by 4 %}<!-- -->{% for product in collection_264426487989.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-jlRMkV ksCOFC pf-38_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-bBHHQT iVWrCP pf-39_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-40_"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage" id="product_image" class="sc-fmcixO cOuJRo pf-41_">{% assign images = product.images %}<div style="--w-xs:0" class="sc-eldixR jPzocc pf-r-dg"><div data-href="{{ product.url }}" data-pf-type="MasterImage" style="order:0;--ratio:100%" class="sc-jtXFOG bFAUbd"><img src="{{ product.featured_image | img_url: "x300", scale: 2 }}" alt="{{ product.featured_image.alt }}" loading="lazy" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"/>{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-eXlDFz fmdpDr pf-hide pf-sm-hide pf-md-hide pf-lg-hide">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-iqVVwt dWaGix pf-hide pf-sm-hide pf-md-hide pf-lg-hide"><div data-pf-type="ProductImageList" class="sc-eWfWgB jwdikc pf-r-dg">
+								{% assign pf_all = "" %}
+								{% assign pf_laptop = "" %}
+								{% assign pf_tablet = "" %}
+								{% assign pf_mobile = "" %}
+								{% for i in (0..images.size) limit:images.size %}
+								{% assign image = images[i] %}
+								{% if true %}
+								{% if i > 4 %}
+								{% assign pf_all = "pf-lg-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_laptop = "pf-md-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_tablet = "pf-sm-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_mobile = "pf-hide" %}
+								{% endif %}
+								{% endif %}
+							<div class="sc-kTLnJg jVwDIe pf-42_ {{pf_all}} {{pf_laptop}} {{pf_tablet}} {{pf_mobile}}" data-img-id="{{ image.id }}" data-pf-type="ImageItem"><img loading="lazy" src="{{ image.src | img_url: "master" }}" alt="{{ image.alt }}" draggable="false"/></div>{% endfor %}</div>{% if true %}<div data-pf-nav="prev" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-left"></i></div><div data-pf-nav="next" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-right"></i></div>{% endif %}</div></div></div><h3 data-product-type="title" data-product-id="{{ product.id }}" data-href="{{ product.url }}" data-pf-type="ProductText" class="sc-fXeWgy hmFFGo pf-44_">{{ product.title }}</h3><div data-product-type="price" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-cbTAsW kbOIjO pf-45_">{{ product.variants[0].price | money }}</div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC" class="sc-lkgURy irubqu pf-46_"><span>Add To Cart</span></button></div></div></div>{% endform %}{% endif %}</div><script>
+				window.__pageflyProducts = window.__pageflyProducts || {};
+				window.__pageflyProducts["{{product.id}}"] = {
+					id: {{product.id | json }},
+					handle: {{product.handle | json }},
+					title: {{product.title | json }},
+					type: {{product.type | json }},
+					url: {{product.url | json }},
+					vendor: {{product.vendor | json }},
+					variants: {{product.variants | json }},
+					options: {{product.options | json }},
+					media: {{product.media | json }},
+					has_only_default_variant: {{product.has_only_default_variant | json }},
+					options_with_values: {{product.options_with_values | json }},
+					selected_variant: {{product.selected_variant | json }},
+					selected_or_first_available_variant: {{product.selected_or_first_available_variant | json }},
+					tags: {{product.tags | json }},
+					template_suffix: {{product.template_suffix | json }},
+					featured_image: {{product.featured_image | json }},
+					featured_media: {{product.featured_media | json }},
+					images: {{product.images | json }}
+				};</script></div>{% endfor %}<!-- -->{% endpaginate %}<!-- -->{% assign product = defaultProduct %}</div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-49_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-50_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-51_"><div data-pf-type="Divider" class="sc-kfPtPH dSXrZE pf-52_"><span data-pf-type="Text" class="sc-ZOsLE HTdit pf-54_">LINERS</span></div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-55_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-56_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-57_"><div class="sc-kiIAaw hQwVTn pf-58_ pf-r pf-r-ew" style="--s-xs:7.5px;--s-lg:15px;--ew-xs:2;--ew-sm:3;--ew-md:5;--ew-lg:4" data-pf-type="ProductList">{% assign collection_264426520757 = collections["liners"] %}<!-- -->{% assign defaultProduct = product %}<!-- -->{% paginate collection_264426520757.products by 4 %}<!-- -->{% for product in collection_264426520757.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-jlRMkV ksCOFC pf-59_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-bBHHQT iVWrCP pf-60_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-61_"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage" class="sc-fmcixO cOuJRo pf-62_">{% assign images = product.images %}<div style="--w-xs:0" class="sc-eldixR jPzocc pf-r-dg"><div data-href="{{ product.url }}" data-pf-type="MasterImage" style="order:0;--ratio:100%" class="sc-jtXFOG bFAUbd"><img src="{{ product.featured_image | img_url: "x300", scale: 2 }}" alt="{{ product.featured_image.alt }}" loading="lazy" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"/>{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-eXlDFz fmdpDr pf-hide pf-sm-hide pf-md-hide pf-lg-hide">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-iqVVwt dWaGix pf-hide pf-sm-hide pf-md-hide pf-lg-hide"><div data-pf-type="ProductImageList" class="sc-eWfWgB jwdikc pf-r-dg">
+								{% assign pf_all = "" %}
+								{% assign pf_laptop = "" %}
+								{% assign pf_tablet = "" %}
+								{% assign pf_mobile = "" %}
+								{% for i in (0..images.size) limit:images.size %}
+								{% assign image = images[i] %}
+								{% if true %}
+								{% if i > 4 %}
+								{% assign pf_all = "pf-lg-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_laptop = "pf-md-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_tablet = "pf-sm-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_mobile = "pf-hide" %}
+								{% endif %}
+								{% endif %}
+							<div class="sc-kTLnJg jVwDIe pf-63_ {{pf_all}} {{pf_laptop}} {{pf_tablet}} {{pf_mobile}}" data-img-id="{{ image.id }}" data-pf-type="ImageItem"><img loading="lazy" src="{{ image.src | img_url: "master" }}" alt="{{ image.alt }}" draggable="false"/></div>{% endfor %}</div>{% if true %}<div data-pf-nav="prev" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-left"></i></div><div data-pf-nav="next" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-right"></i></div>{% endif %}</div></div></div><h3 data-product-type="title" data-product-id="{{ product.id }}" data-href="{{ product.url }}" data-pf-type="ProductText" class="sc-fXeWgy hmFFGo pf-65_">{{ product.title }}</h3><div data-product-type="price" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-cbTAsW kbOIjO pf-66_">{{ product.variants[0].price | money }}</div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC" class="sc-lkgURy irubqu pf-67_"><span>Add To Cart</span></button></div></div></div>{% endform %}{% endif %}</div><script>
+				window.__pageflyProducts = window.__pageflyProducts || {};
+				window.__pageflyProducts["{{product.id}}"] = {
+					id: {{product.id | json }},
+					handle: {{product.handle | json }},
+					title: {{product.title | json }},
+					type: {{product.type | json }},
+					url: {{product.url | json }},
+					vendor: {{product.vendor | json }},
+					variants: {{product.variants | json }},
+					options: {{product.options | json }},
+					media: {{product.media | json }},
+					has_only_default_variant: {{product.has_only_default_variant | json }},
+					options_with_values: {{product.options_with_values | json }},
+					selected_variant: {{product.selected_variant | json }},
+					selected_or_first_available_variant: {{product.selected_or_first_available_variant | json }},
+					tags: {{product.tags | json }},
+					template_suffix: {{product.template_suffix | json }},
+					featured_image: {{product.featured_image | json }},
+					featured_media: {{product.featured_media | json }},
+					images: {{product.images | json }}
+				};</script></div>{% endfor %}<!-- -->{% endpaginate %}<!-- -->{% assign product = defaultProduct %}</div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-70_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-71_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-72_"><div data-pf-type="Divider" class="sc-kfPtPH dSXrZE pf-73_"><span data-pf-type="Text" class="sc-ZOsLE HTdit pf-75_">ACCESSORIES  </span></div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-76_"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-77_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-78_"><div class="sc-kiIAaw hQwVTn pf-79_ pf-r pf-r-ew" style="--s-xs:7.5px;--s-lg:15px;--ew-xs:2;--ew-sm:3;--ew-md:5;--ew-lg:4" data-pf-type="ProductList">{% assign collection_264409350325 = collections["accessories"] %}<!-- -->{% assign defaultProduct = product %}<!-- -->{% paginate collection_264409350325.products by 4 %}<!-- -->{% for product in collection_264409350325.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-jlRMkV ksCOFC pf-80_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-bBHHQT iVWrCP pf-81_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-82_"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage" class="sc-fmcixO cOuJRo pf-83_">{% assign images = product.images %}<div style="--w-xs:0" class="sc-eldixR jPzocc pf-r-dg"><div data-href="{{ product.url }}" data-pf-type="MasterImage" style="order:0;--ratio:100%" class="sc-jtXFOG bFAUbd"><img src="{{ product.featured_image | img_url: "x300", scale: 2 }}" alt="{{ product.featured_image.alt }}" loading="lazy" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"/>{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-eXlDFz fmdpDr pf-hide pf-sm-hide pf-md-hide pf-lg-hide">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-iqVVwt dWaGix pf-hide pf-sm-hide pf-md-hide pf-lg-hide"><div data-pf-type="ProductImageList" class="sc-eWfWgB jwdikc pf-r-dg">
+								{% assign pf_all = "" %}
+								{% assign pf_laptop = "" %}
+								{% assign pf_tablet = "" %}
+								{% assign pf_mobile = "" %}
+								{% for i in (0..images.size) limit:images.size %}
+								{% assign image = images[i] %}
+								{% if true %}
+								{% if i > 4 %}
+								{% assign pf_all = "pf-lg-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_laptop = "pf-md-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_tablet = "pf-sm-hide" %}
+								{% endif %}
+								{% if i > 4 %}
+								{% assign pf_mobile = "pf-hide" %}
+								{% endif %}
+								{% endif %}
+							<div class="sc-kTLnJg jVwDIe pf-84_ {{pf_all}} {{pf_laptop}} {{pf_tablet}} {{pf_mobile}}" data-img-id="{{ image.id }}" data-pf-type="ImageItem"><img loading="lazy" src="{{ image.src | img_url: "master" }}" alt="{{ image.alt }}" draggable="false"/></div>{% endfor %}</div>{% if true %}<div data-pf-nav="prev" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-left"></i></div><div data-pf-nav="next" class="sc-iFMAoI dnQAZn"><i class="pfa pfa-angle-right"></i></div>{% endif %}</div></div></div><h3 data-product-type="title" data-product-id="{{ product.id }}" data-href="{{ product.url }}" data-pf-type="ProductText" class="sc-fXeWgy hmFFGo pf-86_">{{ product.title }}</h3><div data-product-type="price" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-cbTAsW kbOIjO pf-87_">{{ product.variants[0].price | money }}</div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC" class="sc-lkgURy irubqu pf-88_"><span>Add To Cart</span></button></div></div></div>{% endform %}{% endif %}</div><script>
+				window.__pageflyProducts = window.__pageflyProducts || {};
+				window.__pageflyProducts["{{product.id}}"] = {
+					id: {{product.id | json }},
+					handle: {{product.handle | json }},
+					title: {{product.title | json }},
+					type: {{product.type | json }},
+					url: {{product.url | json }},
+					vendor: {{product.vendor | json }},
+					variants: {{product.variants | json }},
+					options: {{product.options | json }},
+					media: {{product.media | json }},
+					has_only_default_variant: {{product.has_only_default_variant | json }},
+					options_with_values: {{product.options_with_values | json }},
+					selected_variant: {{product.selected_variant | json }},
+					selected_or_first_available_variant: {{product.selected_or_first_available_variant | json }},
+					tags: {{product.tags | json }},
+					template_suffix: {{product.template_suffix | json }},
+					featured_image: {{product.featured_image | json }},
+					featured_media: {{product.featured_media | json }},
+					images: {{product.images | json }}
+				};</script></div>{% endfor %}<!-- -->{% endpaginate %}<!-- -->{% assign product = defaultProduct %}</div></div></div></div></div></div><div data-pf-type="Section" class="sc-hUpaWb blbXGf pf-91_ pf-bg-lazy"><div class="sc-khQdMy cdJLiE"><div class="sc-bBHHQT iVWrCP pf-92_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-93_"><h2 data-pf-type="Heading" class="sc-iJKOzS YwOzI pf-94_"><span data-pf-type="Text" class="sc-ZOsLE HTdit pf-96_">BE THE FIRST TO KNOW?</span></h2></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-jObXwK cBBNUN pf-97_"><form target="_blank" action="" method="POST" data-pf-type="MailChimp" class="sc-iNGGwv BOfst pf-98_"><input type="text" placeholder="Enter your mail" name="EMAIL" required=""/><button><span>SUBCRIBE</span></button></form></div></div></div></div></div></div></div></div><script>window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"3.1.3","shopDomain":"dev-eco.myshopify.com","elementData":{"pf-20_":{"listPosition":2,"limit":{"all":5,"laptop":5,"tablet":5,"mobile":5},"spacing":{"all":"10px","laptop":"10px","tablet":"10px","mobile":"10px"},"listLayout":1,"hoverAction":2,"onHover":0,"clickAction":1,"imageSource":"featured","id":"55b239c6-ab7e-4714-9dc0-209ceac8d7eb","_type":"ProductImage"},"pf-22_":{"applyCondition":false,"collectionSource":"all","collectionIds":[],"tags":"","id":"39c6ab7e-0714-4dc0-a09c-eac8d7ebbbf3","_type":"ProductBadge"},"pf-41_":{"listPosition":2,"limit":{"all":5,"laptop":5,"tablet":5,"mobile":5},"spacing":{"all":"10px","laptop":"10px","tablet":"10px","mobile":"10px"},"listLayout":1,"hoverAction":2,"onHover":0,"clickAction":1,"imageSource":"featured","id":"c613b5e3-8593-4448-8893-037062865106","_type":"ProductImage"},"pf-43_":{"applyCondition":false,"collectionSource":"all","collectionIds":[],"tags":"","id":"b5e38593-6448-4893-8370-62865106645f","_type":"ProductBadge"},"pf-62_":{"listPosition":2,"limit":{"all":5,"laptop":5,"tablet":5,"mobile":5},"spacing":{"all":"10px","laptop":"10px","tablet":"10px","mobile":"10px"},"listLayout":1,"hoverAction":2,"onHover":0,"clickAction":1,"imageSource":"featured","id":"a831e832-0ad3-4d7b-9786-7a50b2115791","_type":"ProductImage"},"pf-64_":{"applyCondition":false,"collectionSource":"all","collectionIds":[],"tags":"","id":"e8320ad3-dd7b-4786-ba50-b2115791b7b9","_type":"ProductBadge"},"pf-83_":{"listPosition":2,"limit":{"all":5,"laptop":5,"tablet":5,"mobile":5},"spacing":{"all":"10px","laptop":"10px","tablet":"10px","mobile":"10px"},"listLayout":1,"hoverAction":2,"onHover":0,"clickAction":1,"imageSource":"featured","id":"0fef8b45-8cdb-49fe-9b32-df5b5fb8a1b4","_type":"ProductImage"},"pf-85_":{"applyCondition":false,"collectionSource":"all","collectionIds":[],"tags":"","id":"8b458cdb-79fe-4b32-9f5b-5fb8a1b47dc1","_type":"ProductBadge"}},"pageTitle":"Best Sellers","pageType":"collection","pageId":"436965f4-1a72-4c48-ab74-5e4d2f612644","lazyLoad":true,"imageLazyLoad":true,"nativeImageLazyLoad":true,"fontLink":"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap","trackingIDs":[{"elementIndex":20,"elementId":"55b239c6-ab7e-4714-9dc0-209ceac8d7eb","elementType":"ProductImage","elementName":"ProductImage"},{"elementIndex":25,"elementId":"7e0714dd-c020-4cea-88d7-ebbbf3e9bce5","elementType":"ProductATC","elementName":"ProductATC"},{"elementIndex":41,"elementId":"c613b5e3-8593-4448-8893-037062865106","elementType":"ProductImage","elementName":"ProductImage"},{"elementIndex":46,"elementId":"93644848-9303-4062-8651-06645f4d5452","elementType":"ProductATC","elementName":"ProductATC"},{"elementIndex":62,"elementId":"a831e832-0ad3-4d7b-9786-7a50b2115791","elementType":"ProductImage","elementName":"ProductImage"},{"elementIndex":67,"elementId":"d3dd7b17-867a-40b2-9157-91b7b9f14acc","elementType":"ProductATC","elementName":"ProductATC"},{"elementIndex":83,"elementId":"0fef8b45-8cdb-49fe-9b32-df5b5fb8a1b4","elementType":"ProductImage","elementName":"ProductImage"},{"elementIndex":88,"elementId":"db79fe9b-32df-4b5f-b8a1-b47dc1e89b11","elementType":"ProductATC","elementName":"ProductATC"}],"shopifyProxyPath":"/a/pf_preview"};window.__pagefly_setting__.moneyFormat={{shop.money_format|json}};</script><script src="https://cdn.pagefly.io/pagefly/3.1.3/core/helper.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400&display=swap"
+/><link
+  rel="stylesheet"
+  href="https://cdn.pagefly.io/pagefly/2.16.1/css/main-style.css?t=20210114150153"
+/><link rel="stylesheet" href="{{ 'pagefly.c06e15c4.css' | asset_url }}" />
+
+        <div class="__pf" id="__pf">
+  <div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-0b1e1048">
+    <div data-pf-type="Layout" class="pf-3e0b1e10">
+      <div data-pf-type="CollectionPreview" class="sc-qYGzz cjQBWh pf-7007976c">
+    
+      <div
+        data-container="false"
+        class="sc-pZopv bjKdkd pf-a23e0b1e"
+        data-pf-type="Section"
+      >
+        <div class="sc-pQQXS iWCqut">
+          <div
+            class="sc-qPjXN eYzxUD pf-67a23e0b pf-r pf-r-eh"
+            data-pf-type="Row"
+            style="
+              --pf-s-lg: 15px;
+              --pf-s-md: 15px;
+              --pf-s-sm: 15px;
+              --pf-s-xs: 15px;
+            "
+          >
+            <div
+              class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"
+            >
+              <div class="sc-pkUyL fTyjzF pf-e4cf50ae" data-pf-type="Column">
+
+                
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-6c4df561">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-65f349b9"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-6d5465f3"
+                        >MAGNETIC LASH KITS</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-976c4df5"
+                  >
+                    
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'kits' %}
+                  </div>
+                </div> 
+
+
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-61fc737c">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-115d0411"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-b2ae115d"
+                        >LASHES</span
+                      >
+                    </div>
+                  </div>
+                 <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-976c4df5"
+                  >
+                    
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'lashes' %}
+                  </div>
+                </div>
+
+
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-7cc96017">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-c5343d7f"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-5e8ac534"
+                        >LINERS</span
+                      >
+                    </div>
+                  </div>
+                   <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-976c4df5"
+                  >
+                    
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'liners' %}
+                  </div>
+                   
+                </div>
+
+
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-1767a23e">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-231fa56f"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-f925231f"
+                        >ACCESSORIES</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-601767a2"
+                  >
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'accessories'%}
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+.reveal .hidden {
+  display: block !important;
+  visibility: visible !important; }
+
+.product:hover .reveal img {
+  opacity: 1; }
+
+.reveal {
+  position: relative; }
+
+.reveal .hidden {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+
+.reveal:hover .hidden {
+  z-index: 100000;
+  opacity: 1; }
+
+.reveal .caption {
+  position: absolute;
+  top: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /* fallback for IE8 */
+  background-color: rgba(255, 255, 255, 0.7);
+  font: 13px/1.6 sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 1px;
+  text-align: center;
+  text-rendering: optimizeLegibility; }
+
+.reveal .hidden .caption .centered {
+  display: table-cell;
+  vertical-align: middle; }
+  .reveal {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+@media (min-width: 480px) and (max-width: 979px) {
+  .reveal .caption {
+    font-size: 11px; } }
+</style>
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+{% assign show_2nd_menu ='shop-2'%} 
+
+<div class="mobile-site-selector new-menu-dec">
+  {% include 'site-selector'%}
+</div> 
+ 
+<div class="basel-search-mobile new-menu-dec">
+  <form role="search" method="get" id="searchform" class="searchform{%- if settings.ajax_search_mobile %} basel-ajax-search{%- endif -%}" action="/search">
+    <div>
+      <label class="screen-reader-text" for="q"></label>
+      <input type="text" placeholder="Enter search keyword" value="{{ search.terms | escape }}" name="q" id="q" autocomplete="off"> 
+      {%- if settings.only_search_products -%}<input type="hidden" name="type" value="product" />{%- endif -%}
+      <button type="submit" id="searchsubmit">{{ 'general.search.submit' | t }}</button>
+    </div>
+  </form>
+  {%- if settings.ajax_search_mobile -%}
+  <div class="search-results-wrapper">
+    <div class="basel-search-results">
+      <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
+    </div>
+  </div>
+  {%- endif -%}
+</div>
+<div class="menu-mobile-nav-container new-menu-dec">
+
+   {% include 'mobile-side-menu-main-2020-december' %}
+  
+  
+</div>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.4.0/smooth-scrollbar.js" defer> </script>
+<script>
+//l_lazyLoop();
+    var Scrollbarlooper=   setInterval(function(){
+        if(window.Scrollbar)
+        {
+            clearInterval(Scrollbarlooper);
+            var Scrollbar = window.Scrollbar;
+
+            Scrollbar.init(document.querySelector('#shopify-section-gl_mobile_menu'), {});
+        }
+
+
+    },1000);
+
+
+</script>
+ 
+
+{%- include 'header_account-2020' -%}
+{%- schema -%}
+  {
+    "name": "Mobile Side Menu",
+    "class": "mobile-nav",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Add Menu",
+        "default": "main-menu"
+      }
+   ]
+  }
+{% endschema %}

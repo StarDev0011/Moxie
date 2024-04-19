@@ -1,0 +1,49 @@
+<div class="toolbar toolbar--transparent toolbar-black site-selector">
+  <div class="page-width">
+    <div class="toolbar__content">
+      <div class="toolbar__item toolbar__item--menu">
+        <ul class="inline-list toolbar__menu">
+         
+
+          <li> 
+            <a 
+              class="our-sites moxielash"
+              onclick="MenuEvent('TOPBAR','https://cdn.shopify.com/s/files/1/2569/3918/t/32/assets/logo-d_400x.png','MoxieLash','')"
+              href="/"  
+              ><img 
+                src="https://cdn.shopify.com/s/files/1/2569/3918/t/32/assets/logo-d_400x.png"
+                alt="Moxielash"
+            /></a>
+          </li>
+        </ul>
+
+        <ul class="right-side-menu" style="display: none">
+ 
+          <a href="/insider" title="INSIDER" class="insider-icon-link"> <img src="https://cdn.shopify.com/s/files/1/2569/3918/files/moxielash_insider_icon_036d6d99-1ec2-4466-8ecc-8083a36bedb6.png?v=1607084595" class="insider-icon"/></a>
+          {% include 'account-menu' %}  
+          <span
+            class="cart-t toggleSideCart pointer js-drawer-open-cart"
+            onclick="MenuEvent('TOPBAR','','CART','')"
+            style="color: white"
+          >
+            <img
+              src="https://cdn.shopify.com/s/files/1/2569/3918/files/cart-icon__2x_3dcc595e-13a9-4b00-be0a-a2155a979e0c.png?2686"
+              class="minicart--open"
+              alt="Open Minicart"
+              style="position: relative; width: 20px; left: -8px"
+            />
+            &nbsp;<span
+              class="cash-color cart-count cartCount"
+              style="color: #f7a28d; font-weight: bold"
+              >{{ cart.item_count }}</span
+            ><span
+              class="cash-color cart-value"
+              style="color: #f7a28d; font-weight: bold; display: none"
+              >({{ cart.total_price | money_without_trailing_zeros }})</span
+            >
+          </span>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

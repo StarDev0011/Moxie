@@ -1,0 +1,93 @@
+console.log("loading");
+ 
+ 
+ window.initLayer = function() {
+    return localStorage.getItem('moxieLayer') ?
+        JSON.parse(localStorage.getItem('moxieLayer')) :
+        {};
+}
+
+
+
+
+window.personalData = function() {
+    var customer = {};
+    if (localStorage.getItem('allowTracking')) 
+    {
+        customer.ip_address = JSON.parse(localStorage.getItem("geo_location")).ip;
+        customer.user_agent = navigator.userAgent;
+        customer.first_name = '{{ "nour" | sha256 }}';
+  		{% if customer %}
+		{% endif %}        
+    }
+         return customer;
+}
+
+window.persistData = function(data) {
+  	window.moxieLayer = data;
+    localStorage.setItem('moxieLayer', JSON.stringify(data));
+}
+
+window.getParameterByName = function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+
+
+window.getCookieByName = function getCookieByName(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+window.generateGuid = function generateGuid() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
+
+
+window.thirdPartyRef = function(thirdParty) {
+   	if(thirdParty == undefined)
+      tirdParty = {};
+    if (window.getCookieByName('_fbp') != '')
+        thirdParty.fbp = window.getCookieByName('_fbp');
+
+    if (window.getParameterByName('fbclid', window.location.href))
+        thirdParty.fbc = "fb.1." + Date.now() + "." + getParameterByName('fbclid', window.location.href);
+
+    if (window.getParameterByName('transaction_id', window.location.href))
+        thirdParty.transaction_id = getParameterByName('transaction_id', window.location.href);
+
+    if (window.getParameterByName('gaid', window.location.href))
+        thirdParty.gaid = getParameterByName('gaid', window.location.href);
+  
+  return thirdParty;
+}
+
+
+
+ window.moxieLayer = window.initLayer();
+ moxieLayer.customer = window.personalData();
+ moxieLayer.sm = window.thirdPartyRef(moxieLayer.sm);
+
+ window.persistData(window.moxieLayer);
+

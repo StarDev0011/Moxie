@@ -1,0 +1,84 @@
+<style >.faqs-accordion .pf-2a37bd05.sc-emmjRN.kxBUTU {
+        text-align: left;
+        line-height: 1.3;
+        font-size: 16px;
+    }
+
+
+    .faqs-accordion a.accordion__header {
+        padding-right: 40px;
+      font-family: Brandon, Futura, Roboto;
+      font-weight: 600;
+      font-size: 14px;
+      color: #000;      text-transform: uppercase;
+      letter-spacing: 0px;
+      text-align: left;   position: relative;;
+      border-bottom: 1px solid #d8d8d8; display: block;;
+      }
+.faqs-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  }
+    .faqs-accordion a.accordion__header:hover{font-weight:600;   }
+    .faqs-accordion a.accordion__header:hover,.faqs-accordion a.accordion__header[data-active="true"] ,.faqs-accordion a.accordion__header[data-active="true"]+.accordion__content{
+        background:white;
+    } .faqs-accordion .pf-2a37bd05.sc-emmjRN.kxBUTU {
+          color: black;
+      }
+    .faqs-accordion a.accordion__header {
+        padding: 15px 20px;
+    }
+
+    .pf-2b677ace.sc-iELTvK.dmufID.faqs-accordion {
+        margin-bottom: 60px;
+    }
+.eye-hover-icon i.accordion__arrow.fa.fa-caret-right, .eye-hover-icon [data-active="true"] i.accordion__arrow.fa.fa-caret-right{
+  position: absolute;right:0px;
+              }
+    @media (max-width:767px){
+        span.side-main-title
+        .dmufID .accordion__content {
+            padding: 0;
+        }
+        .faqs-accordion a.accordion__header {
+            font-size: 14px;
+            padding-right: 60px;
+            padding-left:10px;
+            text-transform: uppercase;
+            
+
+        }  .faqs-accordion .pf-2a37bd05.sc-emmjRN.kxBUTU{
+               padding:10px;
+           }
+    }
+    .accordion__content {
+    display: block!Important;
+    padding-top: 20px;
+}
+
+.faqs-accordion a.accordion__header {
+    padding-left: 0px;
+}
+    </style>
+
+<div data-multiple="false" filter="{{filter}}" class="pf-2b677ace sc-iELTvK dmufID faqs-accordion" data-pf-type="Accordion">
+    {%- unless filter -%}
+    {%- assign filter='global' -%}
+    {%- endunless -%}
+    {%- assign articlefound = false -%}    {%- assign articles = blogs.faqs.articles | sort: 'published_at' | reverse -%}
+    {%- for article in articles -%}
+    {%- if article.tags contains filter  -%}
+    {%- assign articlefound = true -%}
+    <div class="pf-16a4eea5 accordion__item sc-cmTdod dGKGQR eye-hover-icon" data-pf-type="Content.Accordion"><a id="abc31882-b8ee-48b4-88db-e45326bcc8e3-{{ article.id }}" class="accordion__header pf-anchor sc-btzYZH kaiwYm" href="#pb-content-abc31882-b8ee-48b4-88db-e45326bcc8e3-{{ article.id }}" data-action="accordion" data-preopen="false" data-active="false"><i class="accordion__arrow fa fa-caret-right"></i>{{ article.title }}</a><div class="accordion__content sc-jwKygS iFPvhB" data-id="abc31882-b8ee-48b4-88db-e45326bcc8e3-{{ article.id }}" style="display: none;"><div class="pf-2a37bd05 sc-emmjRN kxBUTU" data-pf-type="Paragraph">{{ article.content }}</div></div></div>
+    {%- endif -%}
+   {%- endfor -%}
+  <!-- {{articlefound}} -->
+        {%- unless articlefound   -%}
+        {%- for article in articles -%}
+        {%- if article.tags contains 'global'  -%}
+        <div class="pf-16a4eea5 accordion__item sc-cmTdod dGKGQR eye-hover-icon" data-pf-type="Content.Accordion"><a id="abc31882-b8ee-48b4-88db-e45326bcc8e3-{{ article.id }}" class="accordion__header pf-anchor sc-btzYZH kaiwYm" href="#pb-content-abc31882-b8ee-48b4-88db-e45326bcc8e3-{{ article.id }}" data-action="accordion" data-preopen="false" data-active="false"><i class="accordion__arrow fa fa-caret-right"></i>{{ article.title }}</a><div class="accordion__content sc-jwKygS iFPvhB" data-id="abc31882-b8ee-48b4-88db-e45326bcc8e3-{{ article.id }}" style="display: none;"><div class="pf-2a37bd05 sc-emmjRN kxBUTU" data-pf-type="Paragraph">{{ article.content }}</div></div></div>
+        {%- endif -%}
+        
+        {%- endfor -%}
+        {%- endunless -%}
+</div>

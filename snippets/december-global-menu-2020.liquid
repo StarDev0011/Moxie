@@ -1,0 +1,421 @@
+{%- for col in product.collections -%} {%- if col.handle contains 'all-products'
+or col.handle contains 'best-seller' or col.handle contains
+'checkout-these-out-too' or col.handle contains 'upsell-collection' or
+col.handle contains 'frontpage' or col.handle contains 'new' or col.handle
+contains 'facebook-collection' or col.handle contains 'test' or col.handle
+contains 'bestsellers' or col.handle contains 'mini-bundles' -%} {%- else -%}
+{%- assign product_collection = col -%} {%- endif -%} {%- endfor -%}
+
+
+<style>
+  span.cart-t.toggleSideCart {
+    padding-left: 10px;
+  }
+
+  .iORGHt.pf-e77dcf4a.sc-jtRfpW {
+    display: none !important;
+  }
+
+  i.side-menu-open:before {
+    display: none;
+  }
+
+  .color-scheme-dark ul li.mega-collections a {
+    line-height: 0px;
+  }
+
+  .black-menu .black-menu li.mega-collections {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .black-menu li.mega-collections img {
+    width: 100%;
+    display: block;
+  }
+
+  .black-menu li.mega-collections {
+    height: auto;
+  }
+
+  .black-menu span.menu-ite-m.mega .mega-collections a {
+    margin-top: 15px;
+    margin-left: 0;
+    color: white;
+  }
+
+  .black-menu
+    li._XQwxL5Bl._epzEF6qA:hover
+    .color-scheme-dark.sub-menu-dropdown
+    .container {
+    background: black;
+  }
+
+  @media (max-width: 767px) {
+    i.fa.fa-bars.side-menu-open {
+      width: 20px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      height: 20px;
+    }
+
+    picture.sc-gojNiO.dUgZyO {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .act-mobile-menu i.fa.fa-bars.side-menu-open {
+      display: none !important;
+    }
+  }
+</style> 
+<link  
+  rel="stylesheet"
+  href="{{ 'menu.scss.css' | asset_url }}"  
+/>
+<div
+  class="pf-fafe17f9 sc-hwwEjo kIFSBP global-menu-final december-2020"
+  data-pf-type="Body"
+>
+  <div class="pf-0dbeffda sc-lkqHmb fgSdED" data-pf-type="Layout">
+    <div
+      data-container="false"
+      id="header-section-top"
+      class="pf-d4de8281 sc-eilVRo gsoKZR superfixed"
+      data-pf-type="Section"
+      style="padding: 0px"
+    >
+      <div class="sc-gHboQg eLpzfs">
+        <div
+          class="pf-00a29762 pf-r pf-r-eh sc-fYiAbW jrSpEm"
+          data-pf-type="Row"
+        >
+          <div
+            class="pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"
+            style="padding: 0px"
+          >
+            <div class="pf-36009b70 sc-cbkKFq bTgDOc" data-pf-type="Column">
+              {% section 'top-bar' %} 
+              <div
+                class="pf-35061638 pf-r pf-r-eh main-menu-row sc-fYiAbW jrSpEm"
+                data-pf-type="Row"
+              >
+                <div
+                  class="pf-c pf-c-xs--12 pf-c-sm--12 main-logo-wrap"
+                  style="padding: 0px"
+                >
+                  <div
+                    class="pf-121a3e48 sc-cbkKFq bTgDOc"
+                    data-pf-type="Column"
+                  >
+                    <i
+                      class="pf-8d7dff2d fa fa-bars side-menu-open pf-lg--hidden pf-md--hidden sc-cQFLBn bZqGCo"
+                      data-pf-type="Icon"
+                      style="display: block"
+                    >
+                      <svg
+                        class="icon-hamburger"
+                        width="19px"
+                        height="18px"
+                        viewBox="0 0 19 18"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g
+                          stroke="none"
+                          stroke-width="1"
+                          fill="white"
+                          fill-rule="evenodd"
+                        >
+                          <g
+                            id="icon-hamburger"
+                            transform="translate(0.000000, 1.000000)"
+                            stroke="#000000"
+                            stroke-width="1.75"
+                            style="stroke: white"
+                          >
+                            <path d="M0,16 L18.5625,16" id="Line"></path>
+                            <path d="M0,8 L12.375,8" id="Line-Copy"></path>
+                            <path d="M0,0 L18.5625,0" id="Line-Copy-2"></path>
+                          </g>
+                        </g></svg
+                    ></i>
+                    <i
+                      class="pf-fea45295 fa fa-close no-font-icon side-menu-close pf-lg--hidden pf-md--hidden sc-cQFLBn bZqGCo"
+                      data-pf-type="Icon"
+                      ><svg
+                        class="icon-close"
+                        width="17px"
+                        height="17px"
+                        viewBox="0 0 17 17"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
+                        >
+                          <g
+                            transform="translate(-1172.000000, -64.000000)"
+                            fill="#000000"
+                            fill-rule="nonzero"
+                            style="fill: white"
+                          >
+                            <g transform="translate(1172.000000, 64.000000)">
+                              <path
+                                d="M9.9010989,8.59340659 L16.7384615,1.75604396 C17.0934066,1.4010989 17.0934066,0.821978022 16.7384615,0.448351648 C16.3835165,0.0747252747 15.8043956,0.0934065934 15.4307692,0.448351648 L8.59340659,7.28571429 L1.75604396,0.448351648 C1.4010989,0.0934065934 0.821978022,0.0934065934 0.448351648,0.448351648 C0.0747252747,0.803296703 0.0934065934,1.38241758 0.448351648,1.75604396 L7.28571429,8.59340659 L0.448351648,15.4307692 C0.0934065934,15.7857143 0.0934065934,16.3648352 0.448351648,16.7384615 C0.635164835,16.9252747 0.859340659,17 1.1021978,17 C1.34505495,17 1.56923077,16.9065934 1.75604396,16.7384615 L8.59340659,9.9010989 L15.4307692,16.7384615 C15.6175824,16.9252747 15.8417582,17 16.0846154,17 C16.3274725,17 16.5516484,16.9065934 16.7384615,16.7384615 C17.0934066,16.3835165 17.0934066,15.8043956 16.7384615,15.4307692 L9.9010989,8.59340659 Z"
+                              ></path>
+                            </g>
+                          </g>
+                        </g></svg></i
+                    ><a 
+                      href="/"
+                      target="_self"
+                      class="pf-1ab0198e main-logo sc-daURTG gFlKIz"
+                      data-pf-type="Image"
+                    >
+                      <picture class="sc-gojNiO dUgZyO">
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/2569/3918/t/32/assets/logo-d_400x.png" 
+                          alt="MOXIELASH"
+                        />
+                      </picture>
+                    </a>
+                    <span class="flex">
+                      <a
+                        href="/insider"
+                        title="INSIDER"
+                        class="inside-mobile-link insider-icon-link"
+                      > 
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/2569/3918/files/moxielash_insider_icon_036d6d99-1ec2-4466-8ecc-8083a36bedb6.png?v=1607084595"
+                          class="insider-icon"
+                      /></a>
+                      <i
+                        class="pf-9520aac3 fa fa-shopping-bag toggleSideCart pf-lg--hidden pf-md--hidden sc-cQFLBn bZqGCo"
+                        data-pf-type="Icon"
+                        count="{{ cart.item_count }}"
+                      ></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  class="main-nav pf-c pf-c-lg--6 pf-c-md--6 pf-c-sm--12 pf-c-xs--12 pf-sm--hidden pf-xs--hidden"
+                  style="padding: 0px"
+                >
+                  <div
+                    class="pf-be9ae1be sc-cbkKFq bTgDOc"
+                    data-pf-type="Column"
+                  >
+                    <div
+                      class="pf-bc2d6634 sc-gzOgki htgaJh"
+                      data-pf-type="Custom.HTML"
+                    >
+                      {% include 'pagefly.main-menu-s1-2020-december' %}
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="main-cart pf-c pf-c-xs--12 pf-xs--hidden pf-c-sm--12 pf-sm--hidden"
+                  style="padding: 0px"
+                >
+                  <div
+                    class="pf-8745433e sc-cbkKFq bTgDOc"
+                    data-pf-type="Column"
+                  >
+                    <div
+                      class="pf-80a02eef sc-iyvyFf gJXqlU"
+                      data-pf-type="Block"
+                    >
+                      <div
+                        class="pf-9eea43cc sc-jzgbtB fWpeJL"
+                        data-pf-type="Paragraph"
+                      >
+                        <span
+                          class="pf-5ab32cd0 sc-itybZL ihLHML"
+                          data-pf-type="Text"
+                          >{% include 'loyalt-customer-s1-2020' %}</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="search-row" data-pf-type="Row">
+                <div class="search-form">
+                  <form
+                    role="search"
+                    method="get"
+                    id="searchform"
+                    class="searchform{%- if settings.ajax_search %} basel-ajax-search{%- endif -%}"
+                    action="/search"
+                  >
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Enter Search Terms"
+                        value="{{ search.terms | escape }}"
+                        name="q"
+                        id="q"
+                        autocomplete="off"
+                      />
+                      <input type="hidden" name="type" value="product" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <p
+                class="fWpeJL pf-850e6d8a sc-jzgbtB still-runing-corona hidden"
+                data-pf-type="Paragraph"
+              >
+                <span class="pf-1150539e sc-itybZL ihLHML" data-pf-type="Text">
+                  JUST A HEADS UP THAT WE’RE STILL RUNNING BUSINESS AS USUAL AND
+                  ALL SCHEDULED DELIVERY DATES WILL BE CONFIRMED AT CHECKOUT </span
+                ><a class="pointer close-corona-message"
+                  ><svg
+                    class="icon-close"
+                    width="17px"
+                    height="17px"
+                    viewBox="0 0 17 17"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <defs></defs>
+                    <g
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <g
+                        transform="translate(-1172.000000, -64.000000)"
+                        fill="#000000"
+                        fill-rule="nonzero"
+                      >
+                        <g transform="translate(1172.000000, 64.000000)">
+                          <path
+                            d="M9.9010989,8.59340659 L16.7384615,1.75604396 C17.0934066,1.4010989 17.0934066,0.821978022 16.7384615,0.448351648 C16.3835165,0.0747252747 15.8043956,0.0934065934 15.4307692,0.448351648 L8.59340659,7.28571429 L1.75604396,0.448351648 C1.4010989,0.0934065934 0.821978022,0.0934065934 0.448351648,0.448351648 C0.0747252747,0.803296703 0.0934065934,1.38241758 0.448351648,1.75604396 L7.28571429,8.59340659 L0.448351648,15.4307692 C0.0934065934,15.7857143 0.0934065934,16.3648352 0.448351648,16.7384615 C0.635164835,16.9252747 0.859340659,17 1.1021978,17 C1.34505495,17 1.56923077,16.9065934 1.75604396,16.7384615 L8.59340659,9.9010989 L15.4307692,16.7384615 C15.6175824,16.9252747 15.8417582,17 16.0846154,17 C16.3274725,17 16.5516484,16.9065934 16.7384615,16.7384615 C17.0934066,16.3835165 17.0934066,15.8043956 16.7384615,15.4307692 L9.9010989,8.59340659 Z"
+                          ></path>
+                        </g>
+                      </g>
+                    </g></svg
+                ></a>
+              </p>
+              {% unless handle contains 'magnetic-lashes' %}
+              <p
+                class="fWpeJL pf-850e6d8a sc-jzgbtB scarcity-bar-shop"
+                data-pf-type="Paragraph" 
+              > 
+                <span class="bf-sale-notice">
+                  <a href="/collections/all" >  
+                    <b>NEW DROP!</b> LIMITED STOCK AVAILABLE — SHOP NOW!
+                  </a>      
+                </span> 
+              </p>
+
+              {% endunless %} 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+{% include 'collection-nav' %}
+<link
+  rel="stylesheet"
+  href="https://cdn.shopify.com/s/files/1/2569/3918/t/21/assets/futura.css"
+/>
+
+<script>
+  $(document).ready(function () { 
+    $("span.search-mak.pointer").click(function () {
+      $("div#header-section-top").toggleClass("show-search");
+      $(".search-form input#q").focus();
+    });
+  
+    $('.vimeo-popup,div#shopify-section-161021203904309336 a[href*="vimeo"]').magnificPopup({
+      type: 'iframe', 
+      mainClass: 'mfp-fade',
+      removalDelay: 160,
+      preloader: false,
+
+      fixedContentPos: false
+    }); 
+
+
+  });
+</script> 
+
+
+
+ 
+{% comment %}
+<script>
+ 
+  document.onreadystatechange = function () {
+    if (document.readyState == "interactive") {        
+         var countDownDate = new Date("Dec 14, 2020 23:59:59").getTime();
+         
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+
+   var currentTime = new Date(Date.now()+(new Date().getTimezoneOffset()*60000)).getTime();
+ var pSTTime = currentTime - 28800000;
+ var difference = countDownDate - pSTTime;
+ 
+  // Find the distance between now and the count down date
+ 
+
+  // Time calculations for days, hours, minutes and seconds
+  var hours = Math.floor(difference / (1000 * 60 * 60));
+  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  if (hours < 10) hours = '0'+ hours;
+  if (minutes < 10) minutes = '0'+ minutes;
+  if (seconds < 10) seconds = '0'+ seconds;
+  console.log("hours", hours);
+  if(countDownDate){
+    let counterr= hours + ":"
+    + minutes + ":" + seconds + "";;
+  //  document.getElementById("countdown-blackfriday").innerText = hours + ":" + minutes + ":" + seconds + "";
+    
+  $('.countdown-dec').html(counterr);
+  }
+  else
+  {
+    //do nothing
+  } 
+  
+}, 1000);
+    }
+}
+
+
+ 
+  
+
+  
+
+
+
+  
+</script>
+
+{% endcomment %}

@@ -1,0 +1,137 @@
+<style>
+.main-header{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  }
+.main-container{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.header-wrapperr{
+  background-color: #f9f9f9;
+  text-align:center;
+  width:100%;
+}
+.title-wrap{
+  margin-top:20px;
+}
+.title-wrap span{
+      font-weight: inherit;
+    text-decoration: inherit;
+  font-size:35px;
+      vertical-align: baseline;
+    word-break: break-word;
+}
+.title-wrap p{
+    margin-top: 5px;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 20px;
+}
+.description-wrap{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.description-wrap span{
+  font-size:20px;
+  letter-spacing: 1.67px;
+}
+.body-container{
+  max-width: 600px;
+  padding-top:20px;
+  padding-bottom:30px;
+}
+
+.moxi-button{
+  margin-top:10px;
+  margin-bottom:20px;
+  border:none;
+  min-height:50px;
+  min-width:220px;
+  background-color:black;
+  color:white;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+}
+.email-wrap p{
+  padding-top:20px;
+  padding-bottom:20px;
+  font-size:20px;
+  font-style:italic;
+}
+.email-wrap{
+  text-align:center;
+  width:80%;
+  margin-bottom:20px;
+}
+</style>
+<div class="main-header">
+<div class="header-wrapperr">
+  <div class="title-wrap">
+    {{section.settings.sec_title}}
+  </div>
+  <div class="description-wrap"><span>{{section.settings.sec_description}}</span>
+  </div>
+</div>
+</div>
+<div class="main-container">
+  <div class="body-container">
+    {{section.settings.sec_Content}}
+  </div>
+  <a href="https://moxielash.uk"> <button class="moxi-button">{{section.settings.sec_button}}
+    </button></a>
+  <div class="email-wrap">
+    <hr>
+    <p>{{section.settings.sec_email}}</p>
+    <hr>
+  </div>
+  </div>
+
+
+{% schema %}
+ {
+    "name": "Section about",
+    "settings": [
+    
+    { 
+  "type": "html",
+  "id": "sec_title",
+  "label": "Add Title"
+},
+    { 
+  "type": "html",
+  "id": "sec_description",
+  "label": "Add Description"
+},
+{
+  "type": "html",
+  "id": "sec_Content",
+  "label": "Add Text"
+},
+{
+  "type": "text",
+  "id": "sec_email",
+  "label": "Add Text"
+},
+{
+  "type": "text",
+  "id": "sec_button",
+  "label": "Add Button Text"
+}
+    ], 
+    "presets": [
+        {
+            "name": "Section about",
+            "category": "New Section"
+        }
+    ]
+}
+
+{% endschema %}

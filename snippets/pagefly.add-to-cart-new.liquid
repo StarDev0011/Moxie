@@ -1,0 +1,345 @@
+<!-- pagefly.add-to-cart-new.liquid -->
+<style >
+    .select-options {
+        display: flex;
+    }
+
+    .variant-select {
+        padding: 10px;
+        border: 2px solid #d8d8d8;
+        margin: 10px; cursor:pointer;
+        letter-spacing: 0.025em;
+        line-height: 1.6;
+        position: relative;
+        display: inline-block;
+        font-weight: normal;
+        padding: 7px 15px 7px;
+        margin: 0 8px 12px 0;
+        background-color: #fff;
+    }.variant-select.selected {
+         border-color: black;
+         border: 2px solid;
+     }p.gift-option {
+         margin-bottom: 0px;
+         font-family: Roboto;
+         font-weight: 400;
+         padding-top: 0px;
+         padding-bottom: 10px;
+         font-size: 20px;
+         text-transform: uppercase;
+         color: black;
+     }
+
+    .variant-select {
+
+    }</style>
+{% assign pTags= product.tags | joing ' , '%}
+{% if pTags contains 'preorder' %}
+<br>
+<!-- <div class="temp-out-of-stock"><b>Temporarily Out of Stock</b><p>Order now for delivery once restocked.</div>   -->
+{% assign btnText= "PREORDER NOW" %}
+{% else %}
+{% assign btnText = "ADD TO CART" %}
+{% endif %} 
+{% assign VariantSize= product.variants | size %}
+{% if VariantSize ==1  %}
+
+    <form method="post" action="/cart/add" id="cart-form" accept-charset="UTF-8" class="add-to-cart-form cart swatch-color-single add-to-bag-s  flex-wrap items-center product-single__form"  enctype="multipart/form-data">
+        <input type="hidden" name="form_type" value="product">
+
+        <input type="hidden" name="utf8" value="✓">
+        <select name="id" style="display: none;" id="ProductSelect-"
+                class="current-variant-selected">
+            {% for variant in product.variants %}
+                {% if variant.available %}
+                    <option {% if variant== product.selected_or_first_available_variant %} selected="selected"
+                    {% endif %} value="{{ variant.id }}">
+                        {{ variant.title }}
+                    </option>
+                {% else %}
+                    <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                    </option>
+                {% endif %}
+            {% endfor %}
+        </select>
+ 		<input type="hidden" class="qs-qty__num" value="1" min="1" data-id=""
+                       aria-label="quantity" pattern="[0-9]*" name="quantity" id="Quantity1">
+
+         
+        <br/>
+       
+        {% if product.available %} 
+      <button type="submit" id="shopify_add_to_cart_"  class="pf-04d4bf9b pf-i--right sc-dqBHgY eWmgqN add_to_cart_button add-to-cart ajax_form_cart single_add_to_cart_button" href="#choose-package" target="_self" data-pf-type="Button">
+        {% if product.tags contains 'preorder' %}
+        <span class="pf-43a0fc82 sc-hGoxap dWevfJ" data-pf-type="Text">PRE ORDER</span>
+        {% else %} 
+        <span class="pf-43a0fc82 sc-hGoxap dWevfJ" data-pf-type="Text">ADD TO CART</span>
+        {% endif %} 
+        <i class="pf-8e80140e fa fa-angle-right sc-hORach fQBQsl" data-pf-type="Icon"></i>
+        {% if show_price_in_cart %}   
+        <span class="current_price">{{spr}}</span>
+        {% endif%}
+      </button>
+        {% else %}
+        <button  disabled type="submit" id="shopify_add_to_cart_"  class="pf-04d4bf9b pf-i--right sc-dqBHgY eWmgqN add_to_cart_button ajax_form_cart single_add_to_cart_button" href="#choose-package" target="_self" data-pf-type="Button">
+            <span class="pf-43a0fc82 sc-hGoxap dWevfJ" data-pf-type="Text">SOLD OUT!</span>
+            <i class="pf-8e80140e fa fa-angle-right sc-hORach fQBQsl" data-pf-type="Icon"></i>
+        </button>
+        {% endif  %}
+        
+        <div class="shopmessage-checkbox"></div>
+
+    </form>
+
+
+
+
+
+{%else %}
+<form method="post" action="/cart/add" id="cart-form" accept-charset="UTF-8" class="add-to-cart-form cart swatch-color-single add-to-bag-s  product-single__form flex-wrap items-center" enctype="multipart/form-data">
+    <input type="hidden" name="form_type" value="product">
+    <div variant="{{ VariantSize }}" class="add-to-bag-s flex flex-wrap items-center">
+        {% assign p = product %}
+
+        <div>
+            {% if product.handle contains 'gift' %}
+            <p class="gift-option"> GIFT OPTIONS :</p>
+
+          <div class="select-options" >
+              {% for variant in product.variants %}
+                  {% if variant.available %}
+                      <div class="variant-select {% if variant == p.selected_or_first_available_variant %}selected
+                      {% endif %}" data-id="{{ variant.id }}">
+                          {{ variant.title }}
+                      </div>
+                  {% else %}
+                      <div disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                      </div>
+                  {% endif %}
+              {% endfor %}
+
+              
+
+          </div>  {% endif %}</div>
+        <div class="selector-variants w-full {% if product.handle contains 'gift' %} hidden {% endif %} ">
+            
+            <select name="id" onchange="OnSelectVariantChange()" id="ProductSelect"
+                    class=" current-variant-selected">
+                {% for variant in product.variants %}
+                    {% if variant.available %}
+                        <option {% if variant == product.selected_or_first_available_variant %} selected="selected"
+                        {% endif %} value="{{ variant.id }}">
+                            {{ variant.title }}
+                        </option>
+                    {% else %}
+                        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                        </option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+
+
+
+
+        </div>
+        <div class="quant hidden" >
+            <div class="qs-qty">
+                <button type="button" class="qs-qty__adjust qs-qty__adjust--minus icon-fallback-text"
+                        data-id="" data-qty="0">
+                    <span class="fa fa-minus" aria-hidden="true"></span>
+                </button>
+                <input type="text" class="qs-qty__num" value="1" min="1" data-id=""
+                       aria-label="quantity" pattern="[0-9]*" name="quantity" id="Quantity1">
+                <button type="button" class="qs-qty__adjust qs-qty__adjust--plus icon-fallback-text"
+                        data-id="" data-qty="11">
+                    <span class="fa fa-plus" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <br/>
+
+        <button type="submit" id="shopify_add_to_cart" class="add_to_cart_button ajax_form_cart single_add_to_cart_button button alt"
+        >Add to cart</button>
+
+    </div>
+    <div class="shopmessage-checkbox"></div>
+</form>
+{% endif %}
+
+{% unless product.selected_or_first_available_variant.available   %}
+<!-- <a class="klaviyo-bis-trigger" href="#">Notify Me When Available</a> -->
+{% endunless %}
+
+<script>
+
+    var isaddonadded = 0;
+    var mascaraadded = false, lineradded = false;
+    var pProducVariants= {{ product.variants | json }};
+    
+    jQuery('.variant-select').click(function(){
+        jQuery('.variant-select').removeClass('selected');
+        var id= $(this).data('id')
+        $('select#ProductSelect').val(id);
+        jQuery(this).addClass('selected');
+        setTimeout(OnSelectVariantChange,10);
+
+    });
+    function OnSelectVariantChange(){
+        var  variantId= $('select#ProductSelect').val();
+        var selectedVariant= pProducVariants.filter(function(variant){
+
+            return variant.id==variantId;
+        }) ;
+        if(selectedVariant.length>0)
+        {
+            selectedVariant= selectedVariant[0];
+            var formatMoney =Shopify.formatMoney(selectedVariant.price);
+            $('.price-review .price-text').text(formatMoney);
+            $('.product-price span').text(formatMoney);
+        }
+    }
+
+    function addProductToCartwithVARIANT(){
+
+        var id = $('select#ProductSelect-').val();
+
+        addProductToCarti(id, 1);
+
+    }
+
+
+
+
+    function addProductToCartwithQuantity(id) {
+
+        var inputVal = $('input#Quantity1').val();
+
+        addProductToCarti(id, inputVal);
+
+
+    }
+
+
+
+
+    $('.v-add-to-cart').click(function (e) {
+        let context = $(this);
+        e.preventDefault();
+        $(this).text('Adding...');
+
+        let cvaraint = $(this).data('v-id');
+        let pTitle = $(this).data('v-title');
+        CartJS.addItem(cvaraint, 1, {}, {
+            "success": function (data, textStatus, jqXHR) {
+
+                context.text('Added');
+            },
+            "error": function (jqXHR, textStatus, errorThrown) {
+                //    alert('Error: ' + errorThrown + '!');
+            }
+        });
+
+
+    });
+
+
+    $(document).ready(function () {
+     
+
+        $('.qs-qty__adjust--minus').click(function () {
+
+            var inputVal = $('input#Quantity1').val();
+
+            if (inputVal > 1) {
+                $('input#Quantity1').val(inputVal - 1);
+            }
+            else {
+                $('input#Quantity1').val(1);
+
+            }
+
+        })
+
+        $('.qs-qty__adjust--plus').click(function () {
+
+            var inputVal = $('input#Quantity1').val();
+
+            if (parseInt(inputVal) && parseInt(inputVal) >= 1) {
+                $('input#Quantity1').val(parseInt(inputVal) + 1);
+            }
+            else {
+                $('input#Quantity1').val(1);
+
+            }
+
+        });
+
+
+    });
+
+
+</script> 
+
+<script src="https://a.klaviyo.com/media/js/onsite/onsite.js" defer></script>
+<script> 
+    var klaviyo = klaviyo || [];
+  
+         let SuperKlaviyoLoader= setInterval(()=>{
+                    if(  klaviyo.init){
+                        
+                        clearInterval(SuperKlaviyoLoader);
+                      
+    klaviyo.init({
+      account: "NvpxK2",
+      platform: "shopify"
+    });
+    klaviyo.enable("backinstock",{
+    trigger: {
+      product_page_text: "Notify Me When Available",
+      product_page_class: "btn",
+      product_page_text_align: "center",
+      product_page_margin: "0px",
+      replace_anchor: false
+    },
+    modal: {
+     headline: "{product_name}",
+     body_content: "Register to receive a notification when this item comes back in stock.",
+     email_field_label: "Email",
+     button_label: "Notify me when available",
+     subscription_success_label: "You're in! We'll let you know when it's back.",
+     footer_content: '',
+     additional_styles: "@import url('https://fonts.googleapis.com/css?family=Helvetica+Neue');",
+     drop_background_color: "#000",
+     background_color: "#fff",
+     text_color: "#222",
+     button_text_color: "#fff",
+     button_background_color: "#439fdb",
+     close_button_color: "#ccc",
+     error_background_color: "#fcd6d7",
+     error_text_color: "#C72E2F",
+     success_background_color: "#d3efcd",
+     success_text_color: "#1B9500"
+    }
+  });
+
+
+                        
+                    }
+                    // console.log('wating asyncloader');
+                },100);
+ 
+</script>
+ {% if show_price_in_cart%}
+<style>
+     
+form#cart-form button#shopify_add_to_cart_ {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    height: 60px;
+    align-items: center; 
+    padding: 20px;    font-family: futura-pt-medium,'Futura';
+
+}
+</style>
+{% endif %}

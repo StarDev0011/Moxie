@@ -1,0 +1,19 @@
+{% if block.settings.logo %}
+  <style>
+   .explain-text-company.currency-selector-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+  </style>
+  {%- assign footer_logo_size = block.settings.desktop_logo_height | prepend: 'x' -%}
+  <div class="footer__logo">
+    <a href="/">
+      <img src="{{ block.settings.logo | img_url: footer_logo_size, scale: 2 }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
+    </a>
+    <div class="explain-text-company currency-selector-footer">
+      You are shopping with <div class="current-currency" ></div>
+      </div>  
+    
+  </div>
+{% endif %}

@@ -1,0 +1,178 @@
+<ul id="menu-mobile-nav" class="site-mobile-menu 2020-menu dec-menu {{ show_2nd_menu }} " >
+   
+  {%- for link in linklists['new-mobile-menu-december'].links -%} 
+  {%- assign child_list_handle = link.title | split: '[' | first | handleize -%}
+  {%- if linklists[link.handle].links.size > 0 or linklists[child_list_handle].links != blank -%} 
+  <li class="menu-item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-design-default item-event-hover p-{{ link.handle }} {% if link.handle contains 'shop'%} opener-page {% endif %} {%- if link.active %} current_page_item{%- endif -%}">
+    <a class="mega-link" onclick="MenuEvent('MOBILEMENU','','{{link.title}}','{{link.url}}')"     href="{{ link.url }}">{{ link.title | split: '[' | first | capitalize }}</a>
+    <div class="sub-menu-dropdown color-scheme-dark">
+      <div class="container">
+        <ul class="sub-menu color-scheme-dark flex 3" {% if link.title contains  'Shop'%} style="display: flex;"  {% endif %}>
+           
+          {%- if linklists[link.handle].links.size > 0 -%}  
+          {%- assign menu_sub_link  =  linklists[link.handle] -%}
+          {%- elsif  linklists[child_list_handle].links != blank -%}
+          {%- assign menu_sub_link  = linklists[child_list_handle] -%}
+          {%- endif -%}
+          {%- for childlink in menu_sub_link.links -%}
+          {%- assign third_list_handle = childlink.title | split: '[' | first | handleize -%}
+          {%- if linklists[childlink.handle].links.size > 0 or linklists[third_list_handle].links != blank -%}
+          <li class="menu-item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-design-default item-event-hover{%- if childlink.active %} current_page_item{%- endif -%}">
+            <a href="{{ childlink.url }}">{{ childlink.title | split: '[' | first | capitalize }}</a>
+            <div class="sub-menu-dropdown color-scheme-dark ">
+              <div class="container">
+                <ul class="sub-menu color-scheme-dark ">
+                  {%- if linklists[childlink.handle].links.size > 0 -%}
+                  {%- assign menu_sub_sub_link  = linklists[childlink.handle] -%}
+                  {%- elsif linklists[third_list_handle].links != blank -%}
+                  {%- assign menu_sub_sub_link  = linklists[third_list_handle] -%}
+                  {%- endif -%}
+                  {%- for thirdlink in menu_sub_sub_link.links -%}
+                  <li class="menu-item menu-item-design-default item-event-hover{%- if thirdlink.active %} current_page_item{%- endif -%}"><a href="{{ thirdlink.url }}" data-handle="{{ link.handle }}">{{ thirdlink.title | split: '[' | first | capitalize }}</a></li>
+                  {%- endfor -%} 
+                </ul>
+              </div>
+            </div>
+          </li>
+          {%- else -%}
+          <li class="menu-item {% if childlink.title contains 'with-image'%} show-image  w-1/2 {% else %} w-full no-image {% endif %} menu-item-design-default item-event-hover{%- if childlink.active %} current_page_item{%- endif -%}">
+            <a tt data-handle="{{ link.handle }}"  onclick="MenuEvent('MOBILEMENU','','{{link.title}}','{{link.url}}')"   href="{{ childlink.url }}">
+              {% if childlink.title contains 'with-image'%}
+
+            {% assign sImg = childlink.handle | append: '.jpg' %}
+            {%  assign sImg2 = childlink.object.image   %}
+            {% if sImg2  %} 
+            {% if  childlink.handle contains 'shop-all' %}
+            <img handle="{{ sImg }}" src="{{ sImg | asset_img_url:'175x175',crop:'center' }}" class="" alt="" style="width:100px;margin-right: 10px;" >
+            <span class="">
+                             {{ childlink.title | split: '[' | first | capitalize }}</span>
+            {% else %}
+            <img 22 img-2 handle="{{ sImg2 }}" src="{{ sImg2 | img_url :'400x'}}" class="" alt="" style="width:100px;margin-right: 10px;" >
+            <span class="side-text">
+                             {{ childlink.title | split: '[' | first | capitalize }}</span>
+            {% endif %}
+            
+            {% else%}
+            {% assign sImg3= childlink.object.metafields.global.mega_menu_image %} 
+            {% if sImg3 %}
+
+            <img handle="{{ sImg }}" src="{{ sImg3 }}" class="" alt="" style="width:100px;margin-right: 10px;" >
+ 
+            {% else %}
+            <img handle="{{ sImg }}" src="{{ sImg  | asset_img_url:'175x175',crop:'center' }}" class="" alt="" style="width:100px;margin-right: 10px;" >
+            {% endif %}
+
+            {% endif %}
+            <span class="">
+                             {{ childlink.title | split: '[' | first | capitalize }}</span>  {% endif %}
+          </a></li> 
+          {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div> 
+    </div>
+  </li>
+  {%- else -%}
+
+
+  {% if link.title == '[LOAD-MULTIPLE-COLLECTIONS]' %}
+  {% include 'multiple-collections-links' %}
+  {% else %} 
+
+  <li class="menu-item menu-item-design-default item-event-hover{%- if link.active %} current_page_item{%- endif -%}     {% if link.title contains 'with-image'%} show-image  w-1/2 {% else %} w-full no-image {% endif %}   ">
+    
+  
+   
+    <a tsa data-handle="{{ link.handle }}"  onclick="MenuEvent('MOBILEMENU','','{{link.title | strip_html}}','{{link.url}}')"   href="{{ link.url }}">
+      {% assign sImg = link.handle | strip_html | append: '.jpg' %}
+      {% assign sImg2 = link.object.image   %} 
+      {% if sImg2  %} 
+      {% if  link.handle contains '222shop-all' %}  
+      <img tse handle="{{ sImg }}" src="{{ sImg | asset_img_url:'175x175',crop:'center' }}" class="" alt="" style="width:100px;margin-right: 10px;" >
+      <span class="">
+                       {{ link.title | split: '[' | first | capitalize }}</span>
+      {% else %}
+      <img 22 img-2 handle="{{ sImg2 }}" src="{{ sImg2 | img_url :'400x'}}" class="" alt="" style="width:100px;margin-right: 10px;" >
+      <span class="side-text">
+                       {{ link.title | split: '[' | first | capitalize }}</span>
+      {% endif %}
+      
+      {% else%}
+      {% assign sImg3= link.object.metafields.global.mega_menu_image %} 
+      {% if sImg3 %}
+
+      <img tee handle="{{ sImg }}" src="{{ sImg3 }}" class="" alt="" style="width:100px;margin-right: 10px;" >
+
+      {% else %}  
+      <img two handle="{{ sImg }}" src="{{ sImg  | asset_img_url:'175x175',crop:'center' }}" class="" alt="" style="width:100px;margin-right: 10px;" >
+      {% endif %}
+      <span class=""> 
+                       {{ link.title | split: '[' | first | capitalize }}</span>  {% endif %}
+    </a>
+  
+  
+  
+  
+  
+  </li>
+ 
+  {% endif %}
+
+
+
+
+  {%- endif -%}
+  {%- endfor -%} 
+  {%- if settings.show_multiple_currencies -%}
+  {%- assign supported_codes = settings.supported_currencies | split: '|' -%}
+  <li class="currency menu-item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-design-default item-event-hover{%- if link.active %} current_page_item{%- endif -%}">
+    <a href="#" class="value current-currency">{{ shop.currency }}</a>
+    <div class="sub-menu-dropdown color-scheme-dark">
+      <div class="container">
+        <ul class="sub-menu color-scheme-dark">
+          {%- assign codes = 'USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,ILS,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK' | split: ',' -%}
+          {%- assign check = true -%}
+          {%- for code in supported_codes -%}
+          {%- assign array_money = code | split: '-' -%}
+          {%- assign data_currency = array_money | first | strip | upcase -%}
+          {%- assign name_money = array_money | last | strip -%}
+          {%- if data_currency contains 'EUR' -%}{%- assign data_currency = 'EUR' -%}{%- endif -%}
+          {%- if data_currency == shop.currency and codes contains data_currency -%}
+          {%- assign check = false -%}
+          {%- break -%}
+          {%- endif -%}
+          {%- endfor -%}
+          {%- if check and codes contains shop.currency -%}
+          <li data-currency="{{ shop.currency }}" class="active menu-item menu-item-design-default item-event-hover"><a href="#">{{ shop.currency }}</a></li>
+          {%- endif -%}
+          {%- for code in supported_codes -%}
+          {%- assign array_money = code | split: '-' -%}
+          {%- assign data_currency = array_money | first | strip | upcase -%}
+          {%- assign name_money = array_money | last | strip -%}
+          {%- if data_currency contains 'EUR' -%}{%- assign data_currency = 'EUR' -%}{%- endif -%}
+          {%- if codes contains data_currency -%}
+          <li data-currency="{{data_currency}}" class="menu-item menu-item-design-default item-event-hover"><a href="#">{{ name_money }}</a></li>
+          {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </li>
+  {%- endif -%}
+  {%- if settings.show_language_currencies and settings.language_link_list != blank -%}
+  <li class="language menu-item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-design-default item-event-hover p-{{ link.handle }} {%- if link.active %} current_page_item{%- endif -%}">
+    <a href="#">{{ settings.language_title }}</a>
+    <div class="sub-menu-dropdown color-scheme-dark">
+      <div class="container">
+        <ul class="sub-menu color-scheme-dark">
+          {%- for link in linklists[settings.language_link_list].links -%}
+          <li class="menu-item menu-item-design-default item-event-hover  {%- if childlink.active %} current_page_item{%- endif -%}"><a data-handle="{{ link.handle }}" href="{{ link.url }}">{{ link.title | split: '[' | first }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </li>
+  {%- endif -%}
+</ul>
+
+

@@ -1,0 +1,16 @@
+{{'collection-css.css' | asset_url | stylesheet_tag}}
+<div class="main-collection-wrapper page-width" id="relatead-product-slider">
+{%- assign grid_item_width = 'medium-up--one-third widescreen--one-quarter' -%}
+{% assign collection= collections[collection_name]%}
+<script>console.log({{ collections[collection_name] | json }});</script>
+{% for product in collection.products limit:4 %}
+<script>console.log({{ product | json }});</script>
+  
+ {%- include 'single-product-item',
+  class: 'w-1/4 md:w-1/4', img_url: product.images[0],pTitle:product.title ,
+  pDesc:product.description,product_handle:
+  product.handle,vId:0,pPrice:product.,pVendor:product.vendor
+  ,variants:product -%} 
+
+{% endfor %} 
+</div>

@@ -1,0 +1,49 @@
+{% raw %}
+<div class="order-builder-footer-container footer" ng-if="!listing">
+  <div class="footer-content">
+    <div class="order-description">
+      <div class="heading">Your Order</div>
+      <!-- Display Options -->
+      <div class="description">{{ getCustomCart().selectedOptions }}</div>
+    </div>
+    <div
+      class="pricing-total"
+      ng-if="!selectedProduct.title.includes('Cookies')"
+    >
+      ${{ getCustomCart().total }}
+    </div>
+    <div
+      class="pricing-total"
+      ng-if="selectedProduct.title.includes('Cookies')"
+    >
+      ${{ getCustomCart().total }} / cookie
+    </div>
+
+    <div class="quantity-input" ng-if="!hideQty">
+      <label for="">Quantity</label
+      ><input
+        name="qty"
+        ng-model="productQty"
+        class="quantity"
+        type="number"
+        ng-change="updateQty(productQty)"
+      />
+    </div>
+    <div class="actions">
+      <div class="validation-error" ng-class="{ visible: isError }">
+        <div class="text">{{ validationError }}</div>
+        <div class="arrow-container"><div class="arrow"></div></div>
+      </div>
+
+      <div
+        class="button pointer add-to-bag block size-unset type-primary"
+        ng-click="addToCart()"
+      >
+        <div class="content">
+          <div class="slot-wrapper" ng-bind="addtoCartText">ADD TO BAG</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endraw %}

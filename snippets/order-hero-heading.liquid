@@ -1,0 +1,68 @@
+{% raw %}
+<div class="order-builder-header-container" ng-if="!listing">
+  <div class="header-content">
+    <h3 class="pointer" ng-click="reset()">BACK TO MENU</h3>
+  </div>
+</div>
+{% endraw %}
+
+<!-- custom header  -->
+
+{% raw %}
+
+<div class="icecream-builder-header header default" ng-if="!listing">
+  <div class="icecream-builder-hero">
+    <img ng-src="{{ getCustomCart().image }}" class="banner-image" />
+
+    <div class="header-content">
+      <div class="heading">BUILD YOUR</div>
+      <div class="name">
+        {{ getCustomCart().title }}
+      </div>
+      <table class="shappify_qb_grid" ng-if="getCustomCart().title=='Cookies'">
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Price per Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-5</td>
+            <td>$1.25</td>
+          </tr>
+          <tr>
+            <td>6+</td>
+            <td>1</td>
+          </tr>
+         
+        </tbody>
+      </table>
+      <table class="shappify_qb_grid" ng-if="getCustomCart().title.includes('Cone') || getCustomCart().title.includes('Cup')" >
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Price per Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Scoop</td>
+            <td>$3.5</td>
+          </tr>
+          <tr>
+            <td>2 Scoop</td>
+            <td>$5</td>
+          </tr>
+          <tr>
+            <td>3 Scoop</td>
+            <td>$8.5</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endraw %}

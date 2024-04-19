@@ -1,0 +1,14 @@
+.main-collection-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.main-collection-wrapper .grid__item.grid-product {
+    float: none;  
+} 
+@media  (max-width: 767px) {
+    .main-collection-wrapper .grid__item.grid-product {
+        padding: 0px;
+        } 
+}

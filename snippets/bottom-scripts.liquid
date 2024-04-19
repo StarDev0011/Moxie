@@ -1,0 +1,266 @@
+<!-- JB page view -->
+<script type="text/javascript">
+  ;!function(j,u,m,b,l,e){var n="jumbleberry",i="3.2.1",o=function(){o.v==i&&o.e?o.e.apply(o,arguments):o.q.push(arguments)}
+  ,a=encodeURIComponent,t=decodeURIComponent,d=j.location;(o.push=o).l=!1,o.q=[],o.v=i,o.duid=function(n){return(
+  n=n&&u.cookie.match(RegExp(t("%5Cb")+n.substr(0,21)+"id=([^;]+)")))?t(n[1].split(".")[0]):""},o.g=function(n,i){return!!(
+  i=RegExp("^[^#]*[?&]"+n+"=([^&#]+)").exec(i||d.href))&&t(i[1].replace(/\+/g," "))},o.s=function(n){for(var i=Math.round((
+  new Date).getTime()/1e3),t=d.hostname.split("."),r=t.length-1;0<r--&&/^(([a-z0-9]{4}-?){8}|[0-9]+)$/i.test(n)&&n!=o.duid(
+  o.p);)u.cookie=o.p.substr(0,21)+"id="+a(n)+"."+i+".0."+i+".; path=/; max-age=63072000; domain=."+t.slice(r,t.length
+  ).join(".")},o.i=function(n,i,t){if("init"==n)return[o.u=o.duid(o.p=i),o.s(o.h=t||o.u)];t=t||{},(n=u.createElement(
+  "iframe")).src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&event="+a(i||"")+"&transid="+a(t.transaction_id||"")+"&oi="+a(
+  t.order_index||"")+"&ctx="+a(JSON.stringify(t)),n.height=n.width=0,n.style="display:none;visibility:hidden",
+  n.sandbox="allow-forms allow-same-origin allow-scripts",n.referrerPolicy="unsafe-url",(u.body||u.head).appendChild(n)},
+  o.m=o.e=function(){var n,i;!j._RNGSeed&&o.i.apply(o,arguments)&&(n=u.createElement(m),i=u.getElementsByTagName(m)[0],
+  n.src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&v="+o.v,n.async=!!o.h,o.e=!1,o.q.unshift(arguments),j.addEventListener(
+  "beforeunload",n.onerror=function(){o.e=o.i;for(var n=0;n<o.q.length;++n)o.apply(o,o.q[n]);o.q=[]}),
+  i.parentNode.insertBefore(n,i))},j[n]=j[n]||o,j[n].d=b}(window,document,"script","https://www.cross-prison-in.com/");
+  jumbleberry("init", "1OFZW7UF9WX6bF1Sz4PrF0EJuFaaWVXKzoO-L154ss6cT0RuoADepoGYQFmSRn81mD8tp8_YCrerlk8d7U_SkQ~~", jumbleberry.g("click_id"));
+  if (jumbleberry.g("click_id")) {
+    jumbleberry("track", "Lead");
+  }
+  </script>
+  
+
+<style>
+  .locale-selectors__container {
+    display: none;
+  }
+  .current-currency {
+    font-weight: bold;
+    padding-left: 10px;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+{% render 'lashies-upsell-popup' %} {% include 'reamaze-chat' %} {% render
+'bottom-bar' %} {% include 'currency-redirect' %} {% if template contains
+'index'%}
+
+<script>
+  $(document).ready(function () {
+    //     let images = $(".cross-fade").data("images");
+    //     images = images.split(",");
+    //     let index = 1;
+    //     setInterval(function () {
+    //       $(".cross-fade").removeAttr("srcset");
+    //       let img = images[index];
+    //       $(".hero__image-wrapper").css("background-image", "url(" + img + ")");
+    //       index++;
+    //       if (index > 2) {
+    //         index = 0;
+    //       }
+    //     }, 5000);
+
+    $("div#shopify-section-1602569647073").click(function () {
+      $("html, body").animate(
+        {
+          scrollTop: $("#shopify-section-16059807113ced34d0").offset().top - 200
+        },
+        300
+      );
+    });
+  });
+</script>
+
+{% endif %}
+
+<script>
+  jQuery(document).ready(function () {
+    let CounterTemplate = (hour, minutes, seconds) => {
+      return `<div class="flex" style="display:flex!important;" > 
+  
+  <span style="display:none!important">[TIMER]</span>
+  <div>     <span class="pf-countdown__mins">${hour}</span> <label>Hours</label>
+  </div>
+  <div class="pf-countdown__colon" style="    padding: 10px;"><span>:</span></div>
+  
+  <div><span class="pf-countdown__mins">${minutes}</span><label>Mins</label></div>
+  <div class="pf-countdown__colon" style="    padding: 10px;"><span>:</span></div>
+  <div><span class="pf-countdown__secs">${seconds}</span><label>Secs</label></div>
+  
+  </div>`;
+    };
+
+    function startTimer(duration, display) {
+      var timer = duration,
+        minutes,
+        seconds;
+      let hr = 2;
+      mm = 00;
+      ss = 60;
+      var interval = setInterval(function () {
+        if (hr == 0 && mm == 1 && ss == 0) clearInterval(interval);
+        ss--;
+        if (ss == 0) {
+          ss = 59;
+          mm--;
+          if (mm <= 0) {
+            mm = 59;
+            hr--;
+          }
+        }
+
+        if (hr.toString().length < 2) hr = "0" + hr;
+        if (mm.toString().length < 2) mm = "0" + mm;
+        if (ss.toString().length < 2) ss = "0" + ss;
+
+        display.html(CounterTemplate(hr, mm, ss));
+      }, 1000);
+    }
+
+    let SuperTimer = setInterval(() => {
+      let TimerElement = $(".ql-container:contains('[TIMER]')");
+      if (TimerElement.length > 0) {
+        clearInterval(SuperTimer);
+        var TMins = 48 * 60 * 1;
+        startTimer(TMins, TimerElement);
+      }
+      if (window.debug) console.log("wating SuperTimer");
+    }, 100);
+  });
+</script>
+{% include 'ss-include-cart' %} {% render 'klaviyo-script' %}
+
+<script>
+  $(document).ready(function () {
+    var navHeight = $(".global-menu-final").height();
+    var mainMenuHeight = $(".main-menu-row").height();
+    window.HeightToCheck = navHeight - mainMenuHeight;
+    if (window.HeightToCheck > 100) {
+      window.HeightToCheck = 93;
+    }
+
+    $(window).bind("scroll", function () {
+      if ($("body").height() < 1400) {
+        return;
+      }
+      // clg($(window).scrollTop() , window.HeightToCheck)
+      if ($(window).scrollTop() > window.HeightToCheck) {
+        $(".global-menu-final").addClass("do-fixed");
+        $("body").addClass("menu-is-fixed");
+      } else {
+        $(".global-menu-final").removeClass("do-fixed");
+        $("body").removeClass("menu-is-fixed");
+      }
+    });
+    let body = $("body");
+    $("body").on(
+      "click touch",
+      ".side-menu-open, .side-menu-close, .mobile-nav-icon",
+      function () {
+        if (body.hasClass("show-mobile-menu")) {
+          $("body").removeClass("show-mobile-menu");
+        } else {
+          $("body").addClass("show-mobile-menu");
+        }
+      }
+    );
+
+    $(".bg-overlay").click(function () {
+      $("body").removeClass("show-mobile-menu");
+    });
+    $("div#shopify-section-top-bar .top-bar-section").slick({
+      slidesToScroll: 1,
+      autoplay: true,
+      arrows: false,
+      dots: false,
+      autoplaySpeed: 5000
+    });
+    $(".search-makz button").click(function () {
+      $("input#searchInput").focus();
+    });
+  });
+</script>
+
+<script>
+  $(document).on("current-country", function (e, a) {
+    if (a == "US") {
+      let show_currency_popup = jQuery.cookie("show_currency_popup");
+
+      if (show_currency_popup && show_currency_popup == "no") {
+      } else {
+        $("body").addClass("currency_popup");
+      }
+    }
+  });
+  $(document).on(
+    "change",
+    ".currency-geo-wrapper .locale-selectors__selector",
+    function () {
+      let value = $(this).val();
+      if (value == "USD") {
+        location.href = "https://www.moxielash.com";
+        return;
+      }
+
+      let bottomCurrency = $(
+        ".locale-selectors__container .locale-selectors__selector"
+      );
+      bottomCurrency.val(value);
+      bottomCurrency.closest("form").submit();
+    }
+  );
+  $(document).ready(function () {
+    function findGeoLocation(d) {
+      console.log("geo-ip", d);
+      window.current_country = d.country_code2;
+
+      if (d.country_code2) {
+        localStorage.setItem("geo_location", JSON.stringify(d));
+      }
+      if (d.country_code2 == "US") {
+        setInterval(function () {
+          if ($(".show-if-US").hasClass("hidden")) {
+            $(".show-if-US").removeClass("hidden");
+            $(".show-if-not-US").addClass("hidden");
+          }
+        }, 100);
+        $("body").addClass(`country-found-${d.country_code2}`);
+        $(document).trigger("current-country", [d.country_code2]);
+      } else {
+        setInterval(function () {
+          if ($(".show-if-not-US").hasClass("hidden")) {
+            $(".show-if-not-US").removeClass("hidden");
+            $(".show-if-US").addClass("hidden");
+          }
+        }, 100);
+        $("body").addClass(`country-found-${d.country_code2}`);
+        $(document).trigger("current-country", [d.country_code2]);
+        $(document).trigger("current-country", [d.country_code2]);
+      }
+    }
+
+    var GeoLocation = localStorage.getItem("geo_location");
+    if (GeoLocation && GeoLocation != "") {
+      GeoLocation = JSON.parse(GeoLocation);
+      findGeoLocation(GeoLocation);
+    } else {
+      $.getJSON(
+        "https://api.ipgeolocation.io/ipgeo?apiKey=717f09b07c074e04959cd1a144f6935c",
+        findGeoLocation
+      );
+    }
+
+    let findCurrencytLocation = setInterval(() => {
+      if ($(".locale-selectors__selector").length > 0) {
+        clearInterval(findCurrencytLocation);
+        let val = $(".locale-selectors__selector").val();
+        let b = $(".locale-selectors__selector").clone();
+
+        $(".currency-geo-wrapper").html(b);
+        $(".current-currency").text(val);
+        $(".currency-geo-wrapper .locale-selectors__selector").val(val);
+      }
+    }, 100);
+  
+    $('img.navbar__search-btn.navbar__search-btn--open').click(function(){
+$('.navbar__search-item').addClass('active');
+});
+$('img.navbar__search-btn.navbar__search-btn--close').click(function(){
+$('.navbar__search-item').removeClass('active');
+});
+// $('.reviews_cards_wrapper').slick({"dots":false,"infinite":false,"slidesToShow":5,"slidesToScroll":1,"arrows":false,"responsive":[{"breakpoint":1200,"settings":{"slidesToShow":3.5}},{"breakpoint":800,"settings":{"slidesToShow":2.5}},{"breakpoint":600,"settings":{"slidesToShow":1.5}}]});
+ 
+  });  
+</script>
+ 

@@ -1,0 +1,245 @@
+
+<style>.addon-main-wrapper {
+    /*! CSS Used from: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css */ }
+    .addon-main-wrapper .price {
+      color: #6a6969; }
+    .addon-main-wrapper .price .strike-through {
+      text-decoration: line-through;
+      color: #999;
+      margin-right: .938rem; }
+    .addon-main-wrapper .product-detail .linked-product-list {
+      margin-bottom: 1.25rem;
+      padding-top: .9375rem;
+      border-top: .125rem solid #f7f8f9; }
+    .addon-main-wrapper .product-detail .linked-head {
+      margin-bottom: .9375rem;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+    .addon-main-wrapper .product-detail .linked-head .content-asset {
+      margin-bottom: 0;
+      display: inline-block;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+    .addon-main-wrapper .product-detail .linked-head .content-asset label {
+      font-size: .75rem;
+      letter-spacing: .03125rem;
+      margin-right: .25rem;
+      margin-bottom: 0; }
+    .addon-main-wrapper .product-detail .linked-head .content-asset label, .addon-main-wrapper .product-detail .linked-head .strap-guid {
+      color: rgba(0, 0, 0, 0.8);
+      font-family: futura-pt-medium,Arial,sans-serif;
+      font-weight: 500;
+      text-transform: uppercase; }
+    .addon-main-wrapper .product-detail .linked-head .strap-guid {
+      display: inline-block;
+      font-size: .6875rem;
+      letter-spacing: .0625rem;
+      border: none;
+      background: 0 0;
+      cursor: pointer; }
+    .addon-main-wrapper .product-detail .linked-products .slick-slide {
+      padding: 0 .625rem; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_wrapper {
+      text-align: center;
+      padding: 2px; 
+      position: relative;
+      color: black;
+      /* height: 199px; */ }
+    .addon-main-wrapper .product-detail .linked-products .upsell_wrapper:hover .upsell_text p {
+      background-color: #53c563;
+      color: #fff;
+      transition: .3s ease; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_wrapper-inner {
+      border: .0625rem solid #f7f8f9;
+      height: 190px; }
+
+
+    .addon-main-wrapper .product-detail .linked-products .upsell_price {
+      margin-bottom: .3125rem; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_price .price {
+      font-family: futura-pt-book,Arial,sans-serif;
+      font-size: .625rem;
+      line-height: 1.1;
+      color: #000;
+      padding: 0;
+      padding-bottom: .125rem; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_price .price span {
+      display: block;
+      margin: 0;     font-weight: bold;
+ }
+    .addon-main-wrapper .product-detail .linked-products .upsell_description {
+      width: 100%;
+      color: #929292;
+      font-size: .875rem;
+      margin-bottom: auto;
+      text-transform: capitalize;
+      line-height: 1.2;
+      font-family: futura-pt-medium,Arial,sans-serif;
+      font-weight: 500;
+      letter-spacing: .0125rem;
+      margin-bottom: .3125rem;     height: 15px;
+    overflow: hidden;}
+    @media (min-width: 544px) {
+      .addon-main-wrapper .product-detail .linked-products .upsell_description {
+        font-size: .6875rem; } }
+    .addon-main-wrapper .product-detail .linked-products .upsell_text {
+      position: relative;
+      background-color: #f7f8f9; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_text p {
+      font-family: futura-pt-book,Arial,sans-serif;
+      font-size: .6875rem;
+      color: #000;
+      text-align: center;
+      margin: 0;
+      padding: .3125rem; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_text-add {
+      display: block; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_text-added {
+      display: none;
+      padding-left: .625rem;
+      background: #53c563 url(https://www.mvmt.com/on/demandware.static/Sites-MVMTUS-Site/-/en_US/v1606513583980/images/white-checkmark.svg) left 1.25rem center no-repeat; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+      cursor: pointer; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_input:checked ~ .upsell_text .upsell_text-add {
+      display: none; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_input:checked ~ .upsell_text .upsell_text-added {
+      display: block;
+      padding-left: 1.25rem;
+      color: #fff; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_input:checked ~ .upsell_wrapper-inner {
+      border-color: #53c563; }
+    @media (max-width: 767.98px) {
+      .addon-main-wrapper .product-detail .linked-product-list {
+        border-top: 0; }
+      .addon-main-wrapper .product-detail .linked-product-list .linked-head {
+        display: block; } }
+    .addon-main-wrapper .fa {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+    .addon-main-wrapper .fa-question-circle:before {
+      content: "\f059"; }
+    .addon-main-wrapper .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0; }
+    .addon-main-wrapper .linked-products {
+      display: flex; }
+    .addon-main-wrapper .product-detail .linked-products .upsell_wrapper:hover .upsell_wrapper-inner {
+      border-color: #53c563; }
+      form#cart-form button#shopify_add_to_cart_ {
+    border-radius: .3125rem;
+    background: #53c56e;
+}p.addon-notes {
+    color: black;
+    text-align: center;
+    padding: 0px;font-size: 12px;
+    margin: 0px;font-weight: bold;;
+}
+      @media(max-width:767px){
+        .addon-main-wrapper .product-detail .linked-products .upsell_wrapper-inner {
+      height: 180px; }  
+
+      } 
+</style>
+{% assign addonCollectionHandle= 'product-addons' %}
+{% if addon_overide %}
+{% assign addonCollectionHandle= addon_overide %}
+{% endif %}
+ 
+<div class="addon-main-wrapper">
+<div class="product-detail"> 
+  <div class="linked-products" data-collectio="{{addonCollectionHandle}}" > 
+    {% for product in collections[addonCollectionHandle].products %}
+    <div class="upsell_wrapper" style="width: 100%; display: inline-block">
+      <input
+        type="checkbox"
+        autocomplete="off"
+        class="upsell_input" 
+        value="{{product.variants[0].id}}"
+          
+      />
+      <div class="upsell_wrapper-inner">
+        <img
+          class="upsell_image"
+          src="{{product.featured_image | img_url:'200x'}}"
+        /> 
+        <p class="upsell_description">{{product.title }}</p>
+        <div class="upsell_meta">
+          <div class="upsell_price">
+            <div
+              class="price"
+              itemprop="offers"
+              itemscope=""
+              itemtype="http://schema.org/Offer"
+            >
+              <span>
+                <del>
+                  <span class="strike-through list">
+                    <span class="value" content="[object Object]">
+                      <span class="sr-only"> label.price.reduced.from </span>
+                     {{product.compare_at_price|money}} 
+                      <span class="sr-only"> label.price.to </span>
+                    </span>
+                  </span>
+                </del>
+                <span class="sales">
+                  <span class="value" itemprop="price" content="5944.9">
+                    {{product.price |money }}                   </span>
+                </span> 
+              </span>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="upsell_text">
+        <p class="upsell_text-add">+Add</p>
+        <p class="upsell_text-added">Added</p>
+      </div>
+    </div>
+    {% endfor %} 
+  </div> 
+</div> 
+<p class="addon-notes">— Note: All additional items sold separately —</p>
+</div>
+
+<script>$(document).on('change','.upsell_input',function(e){
+
+    let id= $(this).val();
+    if(e.currentTarget.checked){
+     
+    CartJS.addItem(id,1,{},{success:function(cart){
+    // Sthis.refreshCart({},true);
+    }
+    
+    }
+    
+    );
+    }
+    else{ 
+         
+    CartJS.removeItemById(id,{},{success:function(cart){
+  //    Sthis.refreshCart({},true);
+    }}
+    );
+    }
+    
+    })
+    </script> 

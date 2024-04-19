@@ -1,0 +1,50 @@
+{% assign ingredients_size = product.metafields.global.ingredients | size%} {%
+assign how_to_useSize = product.metafields.global.how_to_use | size %}
+
+{% if ingredients_size > 0  or  how_to_useSize > 0 %}
+<div class="simple-tabs-wrapper">
+  <div class="tab">
+    {% if ingredients_size > 0%}
+    <button
+      class="tablinks"
+      onclick="openTab(event, 'ingredients')"
+      id="defaultOpen"
+    >
+      Ingredients
+    </button>
+    {% endif %} {% if how_to_useSize > 0%}
+    <button class="tablinks" onclick="openTab(event, 'how_to_use')">
+      How to Use
+    </button>
+    {% endif %}
+  </div>
+  {% if ingredients_size > 0%}
+  <div id="ingredients" class="tabcontent">
+    <p>{{ product.metafields.global.ingredients }}</p>
+  </div>
+  {% endif %} {% if how_to_useSize > 0%}
+  <div id="how_to_use" class="tabcontent">
+    <p>{{ product.metafields.global.how_to_use }}</p>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+  function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+{% endif %}

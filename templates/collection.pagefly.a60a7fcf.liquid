@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.16.1/css/main-style.css?t=20210114160101"><link rel="stylesheet" href="{{ 'pagefly.a60a7fcf.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-ef4d98a9"><div data-pf-type="Layout" class="pf-2aef4d98"><div data-pf-type="CollectionPreview" class="sc-qYGzz cjQBWh pf-74c1fb5d"><!-- EXPONEA start -->
+{% if collection %}
+<script type="text/javascript">
+    exponea.track('view_category',{
+        category_name: {{ collection.title | json }},
+        category_id: {{ collection.id | json }}
+    });
+</script>
+{% endif %}
+<!-- EXPONEA end -->
+ 
+{% section 'collection-header' %}
+</div><div data-container="true" class="sc-pZopv bjKdkd pf-cfa13cc9" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1170px;"></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-562aef4d" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-bd562aef pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-dcc211f9" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-5dbd562a"><div data-pf-type="Divider" class="sc-qQKeD NKnmf pf-cddc6c15"><div><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-c9c6cddc">LASHIES LINERS</span></div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-fb5dbd56">{% include 'custom-collection-grid' , collection_name:'liners'%}</div></div></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.16.1","shopDomain":"moxielashies.myshopify.com","elementData":{},"pageTitle":"Lashies Liners","pageType":"collection","pageId":"a60a7fcf-a13c-49c6-8ddc-6c15dcc211f9","lazyLoad":false,"imageLazyLoad":false,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2021-01-14T11:16:41.923Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.16.1/core/helper.js?t=20210114160101" defer></script>

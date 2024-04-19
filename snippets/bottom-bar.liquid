@@ -1,0 +1,39 @@
+<!-- FOOTER-BOTTOM-BAR {{handle}} {{template}} -->
+{% unless template contains 'product' %}
+<style>
+  #reamaze-widget #reamaze-widget-icon {
+    display: none !important;
+  }
+  div#shopify-section-footer {
+    margin-bottom: 40px;
+  }
+</style>
+<div class="bottom-bar-footer">
+  <ul class="select-loyalty-footer-formatter__links">
+    <li class="">
+      <a title="Live Chat" class="trigger-remaze-chat">
+        <span class=""> CHAT LIVE</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".trigger-remaze-chat").click(function () {
+      if (window.Reamaze && Reamaze.popup) {
+        Reamaze.popup();
+      } else {
+        let loadChatLoop = setInterval(function () {
+          if (window.Reamaze && Reamaze.popup) {
+            Reamaze.popup();
+            clearInterval(loadChatLoop);
+          }
+        }, 1000);
+        console.log("Chat is loading...");
+      }
+    });
+  });
+</script>
+{% endunless %}
+ 

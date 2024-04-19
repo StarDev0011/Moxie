@@ -1,0 +1,52 @@
+
+<li class="navbar__search-item">
+  <button
+    onclick="MenuEvent('MAINMENU','','Search','')"
+    type="button"
+    class="minisearch-trigger hide-text"
+    data-navbar-search-btn=""
+  >
+    <span>Submit Search</span>
+    <img
+      class="navbar__search-btn navbar__search-btn--open"
+      src="//cdn.shopify.com/s/files/1/2569/3918/t/32/assets/icon-search.svg?v=6317142542185844040"
+      alt="Open Search Button"
+    />
+    <img
+      class="navbar__search-btn navbar__search-btn--close"
+      src="//cdn.shopify.com/s/files/1/2569/3918/t/32/assets/close-search.svg?v=5025548145663231462"
+      alt="Close Search Button"
+    />
+  </button> 
+  <form
+  class="search-form hide-labels"
+  action="/search"
+  method="get"
+  data-navbar-search-form=""
+  data-search-form=""
+  data-children-count="1"
+>
+  <label for="searchInput">Search</label>
+  <input type="hidden" name="type" value="product" />
+  <span
+    role="status"
+    aria-live="polite"
+    class="isp_polite_powered_by_id ui-helper-hidden-accessible"
+  ></span
+  ><input
+    type="search"
+    name="q"
+    value=""
+    placeholder="Search..."
+    id="searchInput"
+    data-search-input="desktop"
+    autocorrect="off"
+    autocapitalize="off"
+    aria-label="Search"
+    class="ui-autocomplete-input"
+    isp_ac="OfF"
+  />
+  <input type="submit" class="search--submit" value="Search" />
+</form> 
+
+</li>

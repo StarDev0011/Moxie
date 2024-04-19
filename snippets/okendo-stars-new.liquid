@@ -1,0 +1,30 @@
+ 
+<div
+  class="pf-8081d674 sc-jtRfpW iORGHt {% unless pr.metafields.loox.num_reviews >0 %} {% endunless %}"
+  data-pf-type="Block"
+  data-review-star="{{ pr.metafields.loox.avg_rating }}"
+  over-ride-review
+  style="--rating: {{
+    pr.metafields.loox.avg_rating | times: 100 | divided_by: 5
+  }}"
+>
+  <p style="margin: 0; margin-top: -3px">
+    {% for i in (0..4) %} {% assign cfount = product.metafields.loox.avg_rating
+    | times:1 %} {% if i < cfount %}
+    <i class="pf-3e11ba8c fa fa-star sc-hORach fQBQsl" data-pf-type="Icon"></i>
+    {% else %}
+    <i
+      class="pf-3e11ba8c fa fa-star-o sc-hORach fQBQsl"
+      data-pf-type="Icon"
+    ></i>
+    {% endif %} {% endfor %}
+  </p>
+  <p class="pf-5bec95d4 sc-emmjRN kxBUTU" data-pf-type="Paragraph">
+    <span
+      class="pf-1311f485 sc-hGoxap dWevfJ"
+      data-pf-type="Text"
+      data-review-count="{{ pr.metafields.loox.num_reviews }}"
+      >({{ pr.metafields.loox.avg_rating }})
+    </span>
+  </p>
+</div>

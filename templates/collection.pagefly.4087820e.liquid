@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.16.1/css/main-style.css?t=20210116180143"><link rel="stylesheet" href="{{ 'pagefly.4087820e.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-f0ee7fa2"><div data-pf-type="Layout" class="pf-eaf0ee7f"><div data-pf-type="CollectionPreview" class="sc-qYGzz cjQBWh pf-05ecc670"><!-- EXPONEA start -->
+{% if collection %}
+<script type="text/javascript">
+    exponea.track('view_category',{
+        category_name: {{ collection.title | json }},
+        category_id: {{ collection.id | json }}
+    });
+</script>
+{% endif %}
+<!-- EXPONEA end -->
+ 
+{% section 'collection-header' %}
+</div><div data-container="true" class="sc-pZopv bjKdkd pf-0e4b0dc6" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1170px;"></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-7aeaf0ee" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-487aeaf0 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-e5d03e95" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-70487aea"><div data-pf-type="Divider" class="sc-qQKeD NKnmf pf-f9057f0d"><div><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-c6eef905">GIFT CARDS</span></div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-c670487a">{% include 'custom-collection-grid' , collection_name:'gift-cards'%}</div></div></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.16.1","shopDomain":"moxielashies.myshopify.com","elementData":{},"pageTitle":"Lashies Gift Card CP","pageType":"collection","pageId":"4087820e-4b0d-46ee-b905-7f0de5d03e95","lazyLoad":false,"imageLazyLoad":false,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2021-01-16T13:25:13.594Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.16.1/core/helper.js?t=20210116180143" defer></script>

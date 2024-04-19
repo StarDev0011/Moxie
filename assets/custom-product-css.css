@@ -1,0 +1,11 @@
+
+div#featured-image, .image.thumbnail-image img{
+    border:none; 
+}
+@media (min-width: 768px) {
+  div#featured-image {
+    min-height: 700px;
+    min-width: 700px;
+  }
+}  
+ 

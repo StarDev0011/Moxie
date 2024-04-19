@@ -1,0 +1,51 @@
+<!-- 
+  <span class="view-detail hidden ps1"> <span style="
+    ">VIEW DETAILS</span></span>      -->
+    {% assign Bprice = product.price %}
+    {% assign ComparePrice = product.compare_at_price %}
+    {%- assign on_sale = false -%}
+    {% if product.compare_at_price > product.price %}
+      {%- assign on_sale = true -%}
+    {% endif %}
+
+    {% assign bd = RBadge | strip_html  | strip  %}
+    <!-- {{bd}}  -->
+    {% if bd contains 'custom' %}
+      {% if bd contains 'SOLD OUT' %}
+      {% if template contains 'product'    %}
+      <script>
+      $(document).ready(function(){
+          {% if insidegrid %} 
+          $('button[data-pid="{{variant.id}}"]').text('SOLD OUT!').attr('disabled','disabled');
+          {% else %}  
+          $('.ajax_form_cart').text('SOLD OUT!').attr('disabled','disabled');
+          {% endif %}
+      });
+        
+      </script>   
+      {% endif%}
+      <div class="simple-sale-badge hidden direct-badge " style="background:black"   >{{RBadge | replace :'custom_' }}</div>   
+      {% else %}    
+      <div class="simple-sale-badge hidden direct-badge " style="background:black"   >{{RBadge | replace :'custom_' }}</div>  
+      {% endif %}
+    
+
+
+
+    {% elsif on_sale %}
+        {% assign discount = product.compare_at_price | minus : product.price %}
+        {% assign saleValue=  product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max  %}
+        {% assign remainder = {{saleValue | modulo:5 }} %}
+        {% if remainder > 0 %}
+        {% assign plusValue=1 %}
+        {% else %}
+        {% assign plusValue=0%}
+        {% endif %}   
+    <div class="simple-sale-badge hidden "  >{{ saleValue | divided_by:5 | ceil |times:5  }}% OFF</div>   
+    {% else %}
+        {% assign reviewcount = product.metafields.okendo.ReviewCount %}
+        <!-- {{product.metafields.okendo.ReviewCount}} -->
+      {% if reviewcount <= 15 or reviewcount == ''  or reviewcount == null %}  
+      <div class="simple-sale-badge hidden direct-badge " style="background:black"    >NEW</div>
+      {% endif %}
+    {% endif %}  

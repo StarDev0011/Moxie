@@ -1,0 +1,256 @@
+<style>
+  span.pf-5ab32cd0.sc-itybZL.ihLHML {
+    /* width: 250px; */
+    display: flex;
+  }
+
+  span.account-d { 
+    display: flex;
+  }
+
+  span.cart-t.toggleSideCart {
+    display: flex;
+  }
+
+  span.pf-5ab32cd0.sc-itybZL.ihLHML svg {
+    margin-right: 10px;
+    position: relative;
+  }
+  .flags-United-Kingdom {
+    background-position: -405px -5px;
+} .flags-United-States {
+    background-position: -365px -5px;
+}
+a.moxielash-us {
+    padding-right: 18px;
+}
+.flags {
+    background-image: url(https://cdn.shopify.com/s/files/1/0524/1507/0375/t/2/assets/currency-flags.png?v=1612172858);
+    background-repeat: no-repeat;
+    display: block;
+    margin: 10px 4px 0 0 !important;
+    float: left;
+} 
+  .site-currency {
+    filter: invert(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.moxielash-us,a.moxielash-uk {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.site-currency .flags-United-States {
+    margin: 0px!important;
+}
+
+.site-currency .flags-United-States {
+    margin: 0px!important;
+}
+.site-currency .flags-United-Kingdom {
+    margin: 0px!Important;
+}
+.flags-United-Kingdom {
+    margin: 0px!Important;
+}
+
+a.moxielash-us {
+    padding: 6px 12px;
+        border: 2px solid transparent;
+
+    margin-right:10px;
+}
+
+a.current.moxielash-uk,.site-currency a:hover {
+    border: 2px solid #d68e69;
+    padding: 6px 12px;
+    background:white;
+    color:black;cursor: pointer;
+    font-weight:bold;
+}
+</style>
+
+<div class="currency-geo-wrapper" ></div>
+{% include 'inline-search' %}  
+<span
+  class="search-makz pointer"
+  style="color: black; padding-right: 10px; position: relative"
+>
+  <div class="utility-bar">
+    <ul>
+      <li class="navbar__search-item">
+        <button 
+          onclick="MenuEvent('MAINMENU','','Search','')"
+          type="button"
+          class="minisearch-trigger hide-text"
+          data-navbar-search-btn=""
+        >
+          <span>Submit Search</span>
+          <img
+            class="navbar__search-btn navbar__search-btn--open"
+            src="{{'icon-search.svg' | asset_url}}"
+                        alt="Open Search Button"
+          />
+          <img
+            class="navbar__search-btn navbar__search-btn--close"
+            src="{{'close-search.svg' | asset_url }}"
+            alt="Close Search Button" 
+          />
+        </button>
+
+        <div class="full-width-search-wrapper as-mega-menu">
+          <div class="row w-full">
+            <div class="center-form">
+              <form
+                class="search-form hide-labels"
+                action="/search"
+                method="get"
+                data-navbar-search-form=""
+                data-search-form=""
+              >
+                <label for="searchInput">Search</label>
+                <input type="hidden" name="type" value="product" />
+
+                <span
+                  role="status"
+                  aria-live="polite"
+                  class="isp_polite_powered_by_id ui-helper-hidden-accessible"
+                ></span
+                ><input
+                  type="search"
+                  name="q"
+                  value=""
+                  placeholder="Search..."
+                  id="searchInput"
+                  data-search-input="desktop"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  aria-label="Search"
+                  class="ui-autocomplete-input"
+                  isp_ac="OfF"
+                />
+                <input type="submit" class="search--submit" value="Search" />
+              </form>
+            </div>
+            <div class="small-container flex">
+              <div class="w-2/6 search-item-section">
+                <h4>TOP SEARCH TERMS</h4>
+                <ul>
+                  <li> <a href="https://www.moxielash.com/search?type=product&q=magnet+lashes">Magnet Lashes</a></li>
+                  <a href="https://www.moxielash.com/search?type=product&q=moxie+insider">Moxie Insider</a></li>
+                  <li><a href="https://www.moxielash.com/search?type=product&q=cosmic+look">Cosmic Look</a></li>
+                  <a><a href="https://www.moxielash.com/search?type=product&q=bossy+lash">Bossy Lash</a></li>
+                </ul>
+              </div>
+              <div class="top-products-section w-4/6">
+                <h4>TOP PRODUCTS</h4>
+                <div class="flex products-section">
+                  {% assign lashes = collections['magnetic-lashes']%} {% for p
+                  in lashes.products limit:3 %}
+
+                  <a href="{{p.url}}" class="single-product-wrapper w-1/3">
+                    <img
+                      class="variant-image"
+                      src="{{ p.featured_image | img_url: '300x' }}"
+                      alt=""
+                    />
+                    <p class="product-title">{{ p.title }}</p>
+                    <p class="variant-price">
+                      {{ p.variants[0].price | money }}
+                    </p>
+                  </a>
+
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</span>
+
+<span class="account-d"   onclick="MenuEvent('MAINMENU','','account ','/account')">
+  <span class="" onclick="location.href='/account/'">
+    <svg
+      width="16px"
+      height="19px"
+      viewBox="0 0 16 19"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        id="HEADER"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+        transform="translate(-1394.000000, -16.000000)"
+      >
+        <g
+          id="noun_1300443_cc"
+          transform="translate(1394.000000, 16.000000)"
+          fill="black"
+          fill-rule="nonzero"
+        >
+          <g>
+            <g>
+              <path
+                d="M16,18.525 C16,18.7873352 15.7893104,19 15.5294118,19 C15.2695131,19 15.0588235,18.7873352 15.0588235,18.525 C15.0588235,14.5899712 11.8984806,11.4 8,11.4 C4.10151944,11.4 0.941176471,14.5899712 0.941176471,18.525 C0.941176471,18.7873352 0.730486918,19 0.470588235,19 C0.210689553,19 0,18.7873352 0,18.525 C0,14.0653007 3.58172202,10.45 8,10.45 C12.418278,10.45 16,14.0653007 16,18.525 Z M8,9.5 C5.40101294,9.5 3.29411765,7.37335256 3.29411765,4.75 C3.29411765,2.12664744 5.40101294,0 8,0 C10.5989871,0 12.7058824,2.12664744 12.7058824,4.75 C12.7058824,7.37335256 10.5989871,9.5 8,9.5 Z M8,8.55 C10.0791896,8.55 11.7647059,6.84868205 11.7647059,4.75 C11.7647059,2.65131795 10.0791896,0.95 8,0.95 C5.92081035,0.95 4.23529412,2.65131795 4.23529412,4.75 C4.23529412,6.84868205 5.92081035,8.55 8,8.55 Z"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </span>
+
+  {% if customer %}
+  <a href="/account/" style="color: black"> {{ customer.first_name }}! </a>
+
+  {% else %} {% endif %}
+</span> 
+<!-- <a 
+  href="https://moxielash.com/pages/help-center"
+  onclick="MenuEvent('MAINMENU','','help-center','/pages/help-center')"
+  class="hide-text"
+  style="
+    width: 19px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 5px;
+  "
+>
+  <img
+    src="https://cdn.shopify.com/s/files/1/2569/3918/t/32/assets/icon-help.svg"
+    alt="Help Center Icon"
+/></a> -->
+<span class="cart-t toggleSideCart pointer js-drawer-open-cart"   onclick="MenuEvent('MAINMENU','','Cart','')"
+style="color: black">
+  <img
+    src="https://cdn.shopify.com/s/files/1/2569/3918/files/cart-icon__2x_3dcc595e-13a9-4b00-be0a-a2155a979e0c.png?2686"
+    class="minicart--open"
+    alt="Open Minicart"
+    style="position: relative; width: 20px; left: -8px; filter: invert(1)"
+  />
+  &nbsp;<span
+    class="cash-color cart-count cartCount"
+    style="color: #f7a28d; font-weight: bold"
+    >{{ cart.item_count }}</span
+  ><span
+    class="cash-color cart-value"
+    style="color: #f7a28d; font-weight: bold; display: none"
+    >({{ cart.total_price | money_without_trailing_zeros }})</span
+  >
+</span>

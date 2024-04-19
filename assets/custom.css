@@ -1,0 +1,10 @@
+.product__main-photos .slick-prev, .product__main-photos .slick-next {
+    width: 20px;
+    height: 20px;
+}
+.product__main-photos .slick-next {
+    right: 0;
+}
+.product__main-photos .slick-prev {
+    left: 10px;
+}

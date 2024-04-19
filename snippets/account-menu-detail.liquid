@@ -1,0 +1,44 @@
+{% if customer %}
+<p href="/account/" class="text-left user-greetings" style="color: black">
+  Hi {{ customer.first_name }}!
+</p>
+<a
+  href="/account?view=loyalty"
+  onclick="MenuEvent('TOPBAR','','rewards','/account?view=loyalty')"
+  class="rewards"
+  >REWARDS</a
+>
+<a
+  href="/account"
+  class="accounts"
+  onclick="MenuEvent('TOPBAR','','account','/account')"
+  >ACCOUNT</a
+> 
+<a
+  href="/account?view=orders"
+  class="orders"
+  onclick="MenuEvent('TOPBAR','','ORDERS','/account?view=orders')"
+  >ORDERS</a
+>
+<a
+  href="/account/logout"
+  onclick="MenuEvent('TOPBAR','','LOGOUT','/account/logout')"
+  class="logout"
+  >LOGOUT</a
+>
+{% else %}
+
+<a
+  href="/account"
+  class="login"
+  onclick="MenuEvent('TOPBAR','','LOGIN','/account')"
+  >LOGIN</a
+>
+<a
+  href="/account/register"
+  onclick="MenuEvent('TOPBAR','','SIGN UP','/account/register')"
+  class="register text-black"
+  >SIGN UP</a
+>
+
+{% endif %}

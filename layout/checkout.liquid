@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    
+    <!-- EXPONEA start -->
+<script>(function(b,c){if(!b.exponea){var a=function(a,g){function k(d){return function(){var e=arguments;""==a&&"initialize"==d&&e&&e[0].modify&&e[0].modify.overlay&&"loading"==c.readyState&&(c.write('<div id="__inf__overlay__" style="position:absolute;background:#fff;left:0;top:0;width:100%;height:100%;z-index:1000000"></div>'),setTimeout(function(){var a=c.getElementById("__inf__overlay__");a&&c.body.removeChild(a);res.__=!0},e[0].modify.delay||500));b.exponea._.push([a+d,arguments])}}var h=g.split(" "),f,d;res={_:[]};for(d=0;d<h.length;d++)f=h[d],res[f]=k(f);return res};b.exponea=a("","initialize identify update track trackLink trackEnhancedEcommerce getHtml showHtml showBanner showForm ping getAbTest");b.exponea.notifications=a("notifications.","isAvailable isSubscribed subscribe unsubscribe");var a=c.createElement("script"),g="https:"===c.location.protocol?"https:":"http:";a.type="text/javascript";a.async=!0;a.src=g+"//api.exponea.com/js/exponea.min.js";c.getElementsByTagName("head")[0].appendChild(a);b.webxpClient=b.webxpClient||{};b.webxpClient.sdk=b.exponea;b.webxpClient.sdkObjectName="exponea"}})(window,document);</script>
+<script type="text/javascript">
+    exponea.initialize({
+    "token": "194d7744-04d8-11eb-a6c0-66ea87b50dad",
+    "target": "//api.exponea.com",
+        "customer": {
+          {% if checkout.customer %}
+            {% if checkout.customer.email %}"email_id": {{ checkout.customer.email | json }}{% endif %}
+          {% endif %}
+        },
+        "track": {
+            "visits": true,
+            {% if shop %}"default_properties": { "domain": {{ shop.permanent_domain|json }} } {% endif %}
+        }
+    });
+    if (Shopify && Shopify.Checkout && Shopify.Checkout.step) {
+    exponea.track('checkout', {
+        step_title: Shopify.Checkout.step,
+        shipping_city: {{ checkout.shipping_address.city | json }},
+        shipping_cost: {{ checkout.shipping_method.price | json }},
+        shipping_country: {{ checkout.shipping_address.country | json }},
+        shipping_type: {{ checkout.shipping_method.title | json }},
+        total_price: {{ checkout.total_price }}
+    });
+}
+</script>
+    
+   <style>
+     a.breadcrumb__link[href="https://moxielash.uk/cart"] {
+    display: none;
+}
+
+a.breadcrumb__link[href="https://moxielash.uk/cart"]+svg {
+    display: none;
+} 
+   </style> 
+  
+  <!-- REAMAZE INTEGRATION START - DO NOT REMOVE -->
+{% render 'reamaze-config' %}
+{% render 'reamaze-sso' %}
+<!-- REAMAZE INTEGRATION END - DO NOT REMOVE -->
+
+{% render 'weglot_hreftags' %}
+{% render 'weglot_switcher' %}
+</head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+
+    <!-- JB checkout -->
+<script type="text/javascript">
+  ;!function(j,u,m,b,l,e){var n="jumbleberry",i="3.2.1",o=function(){o.v==i&&o.e?o.e.apply(o,arguments):o.q.push(arguments)}
+  ,a=encodeURIComponent,t=decodeURIComponent,d=j.location;(o.push=o).l=!1,o.q=[],o.v=i,o.duid=function(n){return(
+  n=n&&u.cookie.match(RegExp(t("%5Cb")+n.substr(0,21)+"id=([^;]+)")))?t(n[1].split(".")[0]):""},o.g=function(n,i){return!!(
+  i=RegExp("^[^#]*[?&]"+n+"=([^&#]+)").exec(i||d.href))&&t(i[1].replace(/\+/g," "))},o.s=function(n){for(var i=Math.round((
+  new Date).getTime()/1e3),t=d.hostname.split("."),r=t.length-1;0<r--&&/^(([a-z0-9]{4}-?){8}|[0-9]+)$/i.test(n)&&n!=o.duid(
+  o.p);)u.cookie=o.p.substr(0,21)+"id="+a(n)+"."+i+".0."+i+".; path=/; max-age=63072000; domain=."+t.slice(r,t.length
+  ).join(".")},o.i=function(n,i,t){if("init"==n)return[o.u=o.duid(o.p=i),o.s(o.h=t||o.u)];t=t||{},(n=u.createElement(
+  "iframe")).src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&event="+a(i||"")+"&transid="+a(t.transaction_id||"")+"&oi="+a(
+  t.order_index||"")+"&ctx="+a(JSON.stringify(t)),n.height=n.width=0,n.style="display:none;visibility:hidden",
+  n.sandbox="allow-forms allow-same-origin allow-scripts",n.referrerPolicy="unsafe-url",(u.body||u.head).appendChild(n)},
+  o.m=o.e=function(){var n,i;!j._RNGSeed&&o.i.apply(o,arguments)&&(n=u.createElement(m),i=u.getElementsByTagName(m)[0],
+  n.src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&v="+o.v,n.async=!!o.h,o.e=!1,o.q.unshift(arguments),j.addEventListener(
+  "beforeunload",n.onerror=function(){o.e=o.i;for(var n=0;n<o.q.length;++n)o.apply(o,o.q[n]);o.q=[]}),
+  i.parentNode.insertBefore(n,i))},j[n]=j[n]||o,j[n].d=b}(window,document,"script","https://www.cross-prison-in.com/");
+  jumbleberry("init", "1OFZW7UF9WX6bF1Sz4PrF0EJuFaaWVXKzoO-L154ss6cT0RuoADepoGYQFmSRn81mD8tp8_YCrerlk8d7U_SkQ~~");
+  if (Shopify.Checkout.step === "contact_information") {
+   jumbleberry("track", "InitiateCheckout");
+  } else if (jumbleberry.g("step") === "payment_method" || Shopify.Checkout.step === "payment_method") {
+   jumbleberry("track", "AddPaymentInfo");
+  }
+  </script>
+  </body>
+</html>

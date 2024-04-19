@@ -1,0 +1,55 @@
+{% stylesheet%} @media all{
+.collection-nav{background-color:white;margin-top:105px;border-bottom:1px solid
+#d8d8d8;display:none;} @media (min-width: 768px){ .collection-nav{display:none;}
+} .collection-nav
+ul{height:110px;display:flex;overflow-y:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0
+8px;margin:0;align-items:center;}
+.collection-nav__list-item{text-align:center;list-style-type:none;padding:0
+8px;flex-shrink:0;}
+.collection-nav__link:hover,.collection-nav__link:focus,.collection-nav__link:active{text-decoration:none;}
+.collection-nav__link
+img{width:66px;height:66px;border-radius:50%;display:inline-block;box-shadow:
+0px 0px 1px 1px #d8d8d8bf;} .collection-nav__link
+span{display:block;color:black;/* font-family:brandon, futura, Brandon;
+*/color:#000;/* font-family:"Brandon Medium", Futura, Arial, sans-serif;
+*/font-size:10px;letter-spacing:0.5px;font-weight:400;letter-spacing:0.5px;text-transform:uppercase;padding-top:
+0px;} nav.collection-nav.collections-inner-nav ul{justify-content:center;} }
+.__pf img{max-width:100%;border:0;vertical-align:middle;height:auto;} @media
+(min-width:992px) and (max-width:1199px){
+.pf-md--hidden{display:none!important;} } @media (min-width:1200px){
+.pf-lg--hidden{display:none!important;} } /*! CSS Used from: Embedded */ @media
+(max-width: 767px){ .collection-nav{display:block!important;} } /*! CSS Used
+from:
+https://cdn.shopify.com/s/files/1/2569/3918/t/32/assets/menu-new-s1.scss.css?v=6888935266937725281
+*/ @media (max-width: 767px){ .collection-nav{margin-top: 80px;border-top: 1px
+solid #d7d7d7;background: white;} } {% endstylesheet%} {% assign collectionL=
+'collections-inner-nav' %} {% if template contains 'collection' or template
+contains 'index' or handle contains 'homepage' or handle contains 'home' or
+handle contains 'collection-' or handle == 'shop-all' or handle contains
+'shop-now' %}
+
+<nav
+  handle="{{ handle }}"
+  class="collection-nav  pf-lg--hidden pf-md--hidden {{ collectionL }}"
+>
+  <ul>
+    {%- for link in linklists[collectionL].links -%} {% assign collectionL=
+    'collections-inner-nav' %} {% assign collectionimg=
+    link.object.metafields.global.nav_menu_image %} {% if collectionimg %} {%
+    else %} {% assign collectionimg = link.object.products[0].featured_image |
+    img_url :'90x'%} {% endif %}
+    <li class="collection-nav__list-item">
+      <a
+        href="{{ link.url }}"
+        class="collection-nav__link {{
+          link.handle
+        }} {%- if link.active %} current_page_item{%- endif -%}"
+      >
+        <img src="{{ collectionimg }}" alt="{{ link.title }}" />
+        <span>{{ link.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

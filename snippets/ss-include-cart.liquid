@@ -1,0 +1,133 @@
+
+<div class="ss-cart-container">
+
+ 
+</div>
+<style>
+  .ss-shopify_cart .ajaxcart-progress.ajaxcart-progress--full{
+    background: #E8DBD430;
+  }.ss-shopify_cart .drawer__title {
+    font-family: 'Brandon';
+    text-transform: uppercase;
+}._21TD44YgVzMlKABcXKG3Cn {
+    position: relative;
+    top: -5px;
+}
+
+span.amount.money.compare-at-price.strikeout._2fPVu_YuFQceK40L_JXgg7._2tOrpqi9HIxhVXBCWMTTuW {
+    color: grey;
+}
+</style> 
+<script>
+
+  window.CartCurrency={{ cart.currency.symbol | json }};
+  
+  //window.myShop={{ shop.enabled_currencies | json }}; 
+ 
+  window.SHOPACCESSTOKEN="test";
+
+  window.OverRideCheckoutLink = () => {
+          location.href='/checkout';
+}; 
+    
+  window.ajaxCartParams = {
+    CartCurrency:window.CartCurrency ? window.CartCurrency : '$',
+    RewardSection: { 
+      enabled: true, 
+      emptyMessage: "Free Lash on orders of £100+",
+      value: 100, 
+      inProgressMessage: `ADD _value_ TO UNLOCK FREE LASH`,
+      finalMessage: "CONGRATS! 🎉 YOU'VE GOT FREE BABY LASH",
+      rewardType: "free_product", 
+      product_variant_id: "39390158848167", 
+      condtionalBy: [ 
+        { 
+          type: "cart_total",
+          value: "100"
+        }   
+      ]
+    },
+    emptyCart: {
+      buttonText: "Shop Now",
+      buttonUrl: "/collections/all"
+    },
+     
+  };
+</script>
+<script src="{{ 'ajax-cart-ss.js' | asset_url }}" defer></script>
+
+<script> 
+  jQuery(document).on("click", ".toggleSideCart, .js-drawer-open-cart", e => {
+    e.preventDefault();
+    SuperCart.ShowCartfn(); 
+  });
+
+
+
+  let ajaxcarter=   setInterval(function(){
+
+
+if(window.context && window.context && window.context.store.subscribe){
+
+
+  clearInterval(ajaxcarter);
+
+  let shouldShowPopup=false;
+setTimeout(() => {
+  shouldShowPopup = true;
+}, 5000);
+
+context.store.subscribe(function(e){
+
+  if (e.showCart) {
+
+    if($('.ss-shopify_cart .ajaxcart__footer--fixed .additional-checkout-buttons').length==0){
+
+    let cartButtons= `<div class="additional-checkout-buttons " >
+  {{ content_for_additional_checkout_buttons }}
+  </div>`;
+  
+  $('.ss-shopify_cart .ajaxcart__footer--fixed').append(cartButtons)
+  
+
+    } 
+
+    
+  }
+  //console.log(e);
+  if(e.Cart)
+  {$('.cartCount').text(e.Cart.item_count);}
+  if(e.Cart && e.Cart.item_count==1){
+
+    let currentProduct= e.Cart.items[0];
+
+
+    if(currentProduct){
+
+      let product_type= currentProduct.product_type;
+ 
+      if(product_type=='lash' && shouldShowPopup)
+      { 
+        $('body').addClass('show-lashies-popup');    
+        shouldShowPopup = false;   
+    
+      }           
+
+    }
+
+  }
+
+});
+
+
+
+
+
+}
+
+
+},100); 
+
+
+
+</script>

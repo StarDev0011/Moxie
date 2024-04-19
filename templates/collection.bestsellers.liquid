@@ -1,0 +1,222 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400&display=swap"
+/><link
+  rel="stylesheet"
+  href="https://cdn.pagefly.io/pagefly/2.16.1/css/main-style.css?t=20210114150153"
+/><link rel="stylesheet" href="{{ 'pagefly.c06e15c4.css' | asset_url }}" />
+<div class="__pf" id="__pf">
+  <div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-0b1e1048">
+    <div data-pf-type="Layout" class="pf-3e0b1e10">
+      <div data-pf-type="CollectionPreview" class="sc-qYGzz cjQBWh pf-7007976c">
+        <!-- EXPONEA start -->
+        {% if collection %}
+        <script type="text/javascript">
+          exponea.track('view_category',{
+              category_name: {{ collection.title | json }},
+              category_id: {{ collection.id | json }}
+          });
+        </script>
+        {% endif %}
+        <!-- EXPONEA end -->
+
+        {% section 'collection-header' %}
+      </div>
+    <!--  {% include 'single-collection-banner'%} -->
+      {% section 'hero-image-bestseller'%}
+      <div
+        data-container="false"
+        class="sc-pZopv bjKdkd pf-a23e0b1e"
+        data-pf-type="Section"
+      >
+        <div class="sc-pQQXS iWCqut">
+          <div
+            class="sc-qPjXN eYzxUD pf-67a23e0b pf-r pf-r-eh"
+            data-pf-type="Row"
+            style="
+              --pf-s-lg: 15px;
+              --pf-s-md: 15px;
+              --pf-s-sm: 15px;
+              --pf-s-xs: 15px;
+            "
+          >
+            <div
+              class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"
+            >
+              <div class="sc-pkUyL fTyjzF pf-e4cf50ae" data-pf-type="Column">
+
+                
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-6c4df561">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-65f349b9"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-6d5465f3"
+                        >KITS</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-976c4df5"
+                  >
+                    
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'kits' %}
+                  </div>
+                </div> 
+
+
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-61fc737c">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-115d0411"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-b2ae115d"
+                        >LASHES</span
+                      >
+                    </div>
+                  </div>
+                 <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-976c4df5"
+                  >
+                    
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'lashes' %}
+                  </div>
+                </div>
+
+
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-7cc96017">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-c5343d7f"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-5e8ac534"
+                        >LINERS</span
+                      >
+                    </div>
+                  </div>
+                   <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-976c4df5"
+                  >
+                    
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'liners' %}
+                  </div>
+                   <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-601767a2"
+                  >
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'liners'%}
+                  </div>
+                </div>
+
+
+                <div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-1767a23e">
+                  <div
+                    data-pf-type="Divider"
+                    class="sc-qQKeD NKnmf pf-231fa56f"
+                  >
+                    <div>
+                      <span
+                        data-pf-type="Text"
+                        class="sc-ptSuy fnmilh pf-f925231f"
+                        >ACCESSORIES</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    data-pf-type="Custom.HTML"
+                    class="sc-pciXn kKVZfa pf-601767a2"
+                  >
+                    {% include 'custom-collection-grid' ,
+                    collection_name:'accessories'%}
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.16.1","shopDomain":"moxielashies.myshopify.com","elementData":{},"pageTitle":"Best Sellers","pageType":"collection","pageId":"c06e15c4-4804-4d54-a5f3-49b9a7b2ae11","lazyLoad":false,"imageLazyLoad":false,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2021-01-14T10:23:03.881Z"};
+  window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+</script>
+<script
+  src="https://cdn.pagefly.io/pagefly/2.16.1/core/helper.js?t=20210114150153"
+  defer
+></script>
+<style>
+.reveal .hidden {
+  display: block !important;
+  visibility: visible !important; }
+
+.product:hover .reveal img {
+  opacity: 1; }
+
+.reveal {
+  position: relative; }
+
+.reveal .hidden {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+
+.reveal:hover .hidden {
+  z-index: 100000;
+  opacity: 1; }
+
+.reveal .caption {
+  position: absolute;
+  top: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /* fallback for IE8 */
+  background-color: rgba(255, 255, 255, 0.7);
+  font: 13px/1.6 sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 1px;
+  text-align: center;
+  text-rendering: optimizeLegibility; }
+
+.reveal .hidden .caption .centered {
+  display: table-cell;
+  vertical-align: middle; }
+  .reveal {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+@media (min-width: 480px) and (max-width: 979px) {
+  .reveal .caption {
+    font-size: 11px; } }
+</style>

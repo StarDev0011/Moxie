@@ -1,0 +1,33 @@
+{% comment %}
+{% assign collectionL= 'collections-inner-nav' %}
+{% if template contains 'collection' or template contains 'index' or handle contains 'homepage' or handle contains 'home' or handle contains 'collection-' or handle == 'shop-all' or handle contains 'shop-now' or handle contains 'cosmic-forces'      %}                                                                    
+        
+<nav handle="{{ handle }}" class="collection-nav  pf-lg--hidden pf-md--hidden {{collectionL}}">
+        <ul>
+         
+            
+            {%- for link in linklists[collectionL].links -%}
+            
+            {% assign collectionL= 'collections-inner-nav' %}
+            {% assign collectionimg=  link.object.metafields.global.nav_menu_image  %}
+                {% if collectionimg  %}
+               {% else %}
+
+                   {% assign collectionimg = link.handle | append: '.jpg' | asset_img_url:'120x120',crop:'center' %}
+                          
+ 
+                {% endif %}
+            <li  class="collection-nav__list-item ">
+                <a href="{{ link.url }}" class="collection-nav__link {{ link.handle }} {%- if link.active %} current_page_item{%- endif -%}">                                        
+                    <img src="{{ collectionimg }}" alt="{{ link.title}}">
+                    <span>{{ link.title }}</span>
+                </a>
+            </li>
+               {% endfor %}
+        </ul>
+    </nav>
+             {% endif %}
+             
+             
+             
+{% endcomment %} 

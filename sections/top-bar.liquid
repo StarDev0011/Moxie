@@ -1,0 +1,27 @@
+<style>
+  .top-bar-section p {
+    font-size: inherit;
+    color: inherit;
+  }
+</style>
+<div
+  class="top-bar-section fWpeJL new-top-bar pf-850e6d8a sc-jzgbtB scarcity-bar-global shopify-section"
+  data-pf-type="Paragraph"
+>
+  {% for block in section.blocks %} {% if block.settings.enable %}
+  <div class="single-block">
+    {%- include 'load_fbmeta' , text:block.settings.title -%}
+  </div>
+  {% endif %} {% endfor %}
+</div>
+<script> 
+    {% capture mainTopBar %} {%- include 'load_fbmeta' , text:section.blocks[0].settings.title -%} {% endcapture %}
+  window.mainTopBar= `{{mainTopBar }}`;
+</script>
+{%- include 'social-tool-bar'  -%}
+
+
+{%- schema -%} { "name": "Top Bar", "class": "new-top-bar", "blocks": [ {
+"type": "message", "name": "Message", "settings": [ { "type": "checkbox", "id":
+"enable", "label": "Enable" }, { "type": "html", "id": "title", "label": "Title"
+}, { "type": "url", "id": "link", "label": "Link" } ] } ] } {% endschema %}
